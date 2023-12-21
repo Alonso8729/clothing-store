@@ -23,14 +23,14 @@ export const Footer = () => {
         </div>
         <div className={styles.item}>
           <h3>About</h3>
-          <span>Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+          <span className={styles.span}>Lorem ipsum dolor, sit amet consectetur adipisicing elit.
             Reiciendis asperiores distinctio nam pariatur?
             Vitae ab facere tempore repudiandae adipisci odit necessitatibus facilis modi est!
             Itaque quasi provident officiis esse repellat?</span>
         </div>
         <div className={styles.item}>
           <h3>Contact</h3>
-          <span>Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+          <span className={styles.span}>Lorem ipsum dolor, sit amet consectetur adipisicing elit.
             Reiciendis asperiores distinctio nam pariatur?
             Vitae ab facere tempore repudiandae adipisci odit necessitatibus facilis modi est!
             Itaque quasi provident officiis esse repellat?</span>
@@ -44,7 +44,7 @@ export const Footer = () => {
           </span>
         </div>
         <div className={styles.right}>
-          <img src={payment} alt="payment" />
+          <img className={styles.img} src={payment} alt="payment" />
         </div>
       </div>
     </div>
