@@ -20,7 +20,7 @@
     color: inherit;
 }
 
-span {
+.span {
     color: gray;
 }
 
@@ -44,6 +44,6 @@ span {
     color: rgb(17, 143, 233);
 }
 
-img{
+.img{
     height: 50px;
 }
