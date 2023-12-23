@@ -53,3 +53,9 @@
     text-transform: uppercase;
     font-weight: 500;
 }
+
+.button:hover {
+    color: white;
+     background-color: #2879fe;
+    
+}
