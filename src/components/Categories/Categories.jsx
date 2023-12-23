@@ -34,7 +34,7 @@ const Categories = () => {
                     <img src={c3} className={styles.img} />
                     <button className={styles.button}>
                         <Link to='products/3' className='link'>
-                            New Season
+                            Men
                         </Link>
                     </button>
                 </div>
