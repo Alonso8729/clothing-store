@@ -1,11 +1,10 @@
-import { Spa } from '@mui/icons-material'
 import styles from './Card.module.css'
 import React from 'react'
 import { Link } from 'react-router-dom'
 
 const Card = ({ item }) => {
   return (
-    <Link className={styles.link} to={`/product/${item.id}`}>
+    <Link className={styles.link} to={`product/${item.id}`}>
       <div className={styles.card}>
         <div className={styles.image}>
           {item.isNew && <span className={styles.span}>New Item</span>}

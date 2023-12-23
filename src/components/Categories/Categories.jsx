@@ -15,7 +15,7 @@ const Categories = () => {
                 <div className={styles.row}>
                     <img src={c1} className={styles.img} />
                     <button className={styles.button}>
-                        <Link className='link' to='/products/1'>
+                        <Link className='link' to='products/1'>
                             Sale
                         </Link>
                     </button>
@@ -23,7 +23,7 @@ const Categories = () => {
                 <div className={styles.row}>
                     <img src={c2} className={styles.img} />
                     <button className={styles.button}>
-                        <Link to='/products/2' className='link'>
+                        <Link to='products/2' className='link'>
                             Women
                         </Link>
                     </button>
@@ -33,7 +33,7 @@ const Categories = () => {
                 <div className={styles.row}>
                     <img src={c3} className={styles.img} />
                     <button className={styles.button}>
-                        <Link to='/products/3' className='link'>
+                        <Link to='products/3' className='link'>
                             New Season
                         </Link>
                     </button>
@@ -45,7 +45,7 @@ const Categories = () => {
                         <div className={styles.row}>
                             <img src={c4} className={styles.img} />
                             <button className={styles.button}>
-                                <Link to='/products/4' className='link'>
+                                <Link to='products/4' className='link'>
                                     New Season
                                 </Link>
                             </button>
@@ -55,7 +55,7 @@ const Categories = () => {
                         <div className={styles.row}>
                             <img src={c5} className={styles.img} />
                             <button className={styles.button}>
-                                <Link to='/products/5' className='link'>
+                                <Link to='products/5' className='link'>
                                     Accessorries
                                 </Link>
                             </button>
@@ -65,7 +65,7 @@ const Categories = () => {
                 <div className={styles.row}>
                     <img src={c6} className={styles.img} />
                     <button className={styles.button}>
-                        <Link to='/products/6' className='link'>
+                        <Link to='products/6' className='link'>
                             Shoes
                         </Link>
                     </button>
