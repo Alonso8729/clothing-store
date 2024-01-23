@@ -3,12 +3,17 @@ import styles from './Product.module.css'
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import BalanceIcon from '@mui/icons-material/Balance';
+import { useLocation } from 'react-router-dom';
+import {useDispatch} from 'react-redux'
+import { addToCart } from '../../redux/cartReducer';
 
 export const Product = () => {
+  const location = useLocation();
+  const { item } = location.state || {};
   const [quantity, setQuantity] = useState(1);
   const [selectedImg, setSelectedImg] = useState(0)
-  const images = ['https://images.pexels.com/photos/12179283/pexels-photo-12179283.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-    'https://images.pexels.com/photos/14452725/pexels-photo-14452725.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'];
+  const images = [item.imgFront, item.imgBack];
+  const dispatch = useDispatch();
 
   return (
     <div className={styles.product}>
@@ -23,20 +28,23 @@ export const Product = () => {
       </div>
       <div className={styles.right}>
         <h1 className={styles.title}>
-          Cropped Hood Sweatshirt
+          {item.title}
         </h1>
-        <span className={styles.price}>$199</span>
-        <p className={styles.p}>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-          Dicta optio possimus atque
-          blanditiis, veritatis odio, repellendus nemo voluptatem ut,
-          itaque consectetur. Labore, quisquam officia.
-          Suscipit nemo similique sit a blanditiis.</p>
+        <span className={styles.price}>${item.newPrice}</span>
+        <p className={styles.p}>{item.desc}</p>
         <div className={styles.quantity}>
           <button className={styles.btn} onClick={() => setQuantity(prev => prev === 1 ? 1 : prev - 1)}>-</button>
           <span >{quantity}</span>
           <button className={styles.btn} onClick={() => setQuantity(prev => prev + 1)}>+</button>
         </div>
-        <button className={styles.add}>
+        <button className={styles.add} onClick={()=>dispatch(addToCart({
+          id:item.id,
+          title:item.title,
+          desc:item.desc,
+          img:item.imgFront,
+          price: item.newPrice,
+          quantity
+        }))}>
           <AddShoppingCartIcon />
           ADD TO CART
         </button>
@@ -50,8 +58,8 @@ export const Product = () => {
         </div>
         <div className={styles.info}>
           <span>Vendor: ZARA</span>
-          <span>Product Type: Sweatshirt</span>
-          <span>Tags: Sweatshirt, Women, Top</span>
+          <span>Product Type: {item?.productType}</span>
+          <span>Tags: {item.tags.join(', ')}</span>
         </div>
         <hr />
         <div className={styles.details}>

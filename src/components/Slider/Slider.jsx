@@ -8,7 +8,7 @@ import React, { useState, useEffect } from 'react'
 
 
 
- const Slider = () => {
+const Slider = () => {
     const [currSlide, setCurrSlide] = useState(0)
     const imgArray = [img1, img2, img3]
 

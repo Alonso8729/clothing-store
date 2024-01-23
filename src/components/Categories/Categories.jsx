@@ -34,7 +34,7 @@ const Categories = () => {
                     <img src={c3} className={styles.img} />
                     <button className={styles.button}>
                         <Link to='products/3' className='link'>
-                            Men
+                            New Season
                         </Link>
                     </button>
                 </div>
@@ -46,7 +46,7 @@ const Categories = () => {
                             <img src={c4} className={styles.img} />
                             <button className={styles.button}>
                                 <Link to='products/4' className='link'>
-                                    New Season
+                                    Men
                                 </Link>
                             </button>
                         </div>
@@ -63,10 +63,10 @@ const Categories = () => {
                     </div>
                 </div>
                 <div className={styles.row}>
-                    <img src={c6} className={styles.img} />
+                    <img src='https://images.pexels.com/photos/7862291/pexels-photo-7862291.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1' className={styles.img} />
                     <button className={styles.button}>
                         <Link to='products/6' className='link'>
-                            Shoes
+                            KIDS
                         </Link>
                     </button>
                 </div>

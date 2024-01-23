@@ -1,47 +1,48 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styles from './Cart.module.css'
 import imgOneFront from '../../assets/Cards/img1-front.jpg'
 import imgOneBack from '../../assets/Cards/img1-back.jpg'
 import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
+import { useSelector, useDispatch } from "react-redux"
+import { deleteFromCart, resetCart } from '../../redux/cartReducer';
+
 
 const Cart = () => {
-    const data = [
-        {
-            id: 1,
-            imgFront: imgOneFront,
-            imgBack: imgOneBack,
-            title: 'Cropped Hood Sweatshirt',
-            isNew: true,
-            oldPrice: 19,
-            newPrice: 12,
-            desc: 'Cotton sweatshirt. Hood and long sleeves. Matching tonal rib trim'
-        },
-    ]
+    const products = useSelector(state => state.cart.products)
+    const dispatch = useDispatch();
+    const totalPrice = () => {
+        let total = 0;
+        products.forEach(element => {
+            total += element.quantity * element.price
+        });
+        return total.toFixed(2);
+    }
+
     return (
         <div className={styles.cart}>
             <h1 className={styles.h1}>
-                Products in your cart
+                {products.length === 0 ? 'No':''} Products in your cart
             </h1>
-            {data?.map(item => (
+            {products?.map(item => (
                 <div key={item.id} className={styles.item}>
-                    <img src={item.imgFront} alt="" className={styles.img} />
+                    <img src={item.img} alt="" className={styles.img} />
                     <div className={styles.details}>
                         <h1 className={styles.title}>
                             {item.title}
                         </h1>
                         <p>{item.desc?.substring(0, 100)}</p>
-                        <div className={styles.price}>1 X ${item.newPrice}</div>
+                        <div className={styles.price}>{item.quantity} X ${item.price}</div>
                     </div>
-                    <DeleteOutlineIcon className={styles.delete} />
+                    <DeleteOutlineIcon className={styles.delete} onClick={() => dispatch(deleteFromCart(item.id))} />
                 </div>
 
             ))}
             <div className={styles.total}>
                 <span>SUBTOTAL</span>
-                <span>$123</span>
+                <span>${totalPrice()}</span>
             </div>
             <button className={styles.btn}>PROCEED TO CHECKOUT</button>
-            <span className={styles.reset}>Reset Cart</span>
+            <span className={styles.reset} onClick={() => dispatch(resetCart())}>Reset Cart</span>
         </div>
 
     )

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import styles from './FeaturedProducts.module.css'
 import Card from '../Card/Card'
 import imgOneFront from '../../assets/Cards/img1-front.jpg'
@@ -9,46 +9,17 @@ import imgThreeFront from '../../assets/Cards/img3-front.jpg'
 import imgThreeBack from '../../assets/Cards/img3-back.jpg'
 import imgFourFront from '../../assets/Cards/img4-front.jpg'
 import imgFourBack from '../../assets/Cards/img4-back.jpg'
+import imgFiveFront from '../../assets/Cards/img5-front.jpg'
+import imgFiveBack from '../../assets/Cards/img5-back.jpg'
+import data from '../../Data'
 
 const FeaturedProducts = ({ type }) => {
-    const data = [
-        {
-            id: 1,
-            imgFront: imgOneFront,
-            imgBack: imgOneBack,
-            title: 'Cropped Hood Sweatshirt',
-            isNew: true,
-            oldPrice: 19,
-            newPrice: 12
-        },
-        {
-            id: 2,
-            imgFront: imgTwoFront,
-            imgBack: imgTwoBack,
-            title: 'Cotton Sweatshirt',
-            isNew: true,
-            oldPrice: 19,
-            newPrice: 12
-        },
-        {
-            id: 3,
-            imgFront: imgThreeFront,
-            imgBack: imgThreeBack,
-            title: 'Hooded Overshirt',
-            isNew: false,
-            oldPrice: 24,
-            newPrice: 14
-        },
-        {
-            id: 4,
-            imgFront: imgFourFront,
-            imgBack: imgFourBack,
-            title: 'Sweatshirt with Hooded Collar ',
-            isNew: false,
-            oldPrice: 27,
-            newPrice: 20
-        },
-    ]
+
+    //Write const data with couple of featured products
+    const featuredProducts = data.filter(item => item.id >= 1 && item.id<=4);
+    const trendingProducts = data.filter(item=> item.id >=5 && item.id <=8);
+
+    const selectedProducts = type === 'Featured' ? featuredProducts:trendingProducts
 
 
     return (
@@ -60,9 +31,10 @@ const FeaturedProducts = ({ type }) => {
                     id atque esse veniam reprehenderit quo corporis unde eaque fugiat ipsa.</p>
             </div>
             <div className={styles.bottom}>
-                {data.map(item => (
+                {selectedProducts?.map(item => (
                     <Card item={item} key={item.id} />
                 ))}
+               
             </div>
         </div>
     )
