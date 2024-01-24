@@ -5,7 +5,7 @@
     -webkit-box-shadow: 0px 0px 7px -5px rgba(0, 0, 0, 0.5);
     box-shadow: 0px 0px 7px -5px rgba(0, 0, 0, 0.5);
     z-index: 2;
-    background: white;
+    background: #fff;
     padding: 20px;
 }
 
@@ -27,6 +27,10 @@
     color: gray;
     font-weight: 400;
     font-size: 24px;
+}
+
+.desc{
+    max-width: 250px;
 }
 
 .details>h1 {
