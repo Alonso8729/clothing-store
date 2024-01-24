@@ -9,14 +9,15 @@ import { Link } from 'react-router-dom'
 import styles from './Navbar.module.css'
 import Cart from '../Cart/Cart';
 import { useSelector } from 'react-redux'
+import Wishlist from '../WIshlist/Wishlist';
 
 export const Navbar = () => {
-  const [open, setOpen] = useState(false)
+  const [cartOpen, setCartOpen] = useState(false)
   const products = useSelector(state => state.cart.products)
   const cartRef = useRef(null);
 
   const closeCart = () => {
-    setOpen(false);
+    setCartOpen(false);
   };
 
   useEffect(() => {
@@ -27,7 +28,7 @@ export const Navbar = () => {
       }
     };
 
-    if (open) {
+    if (cartOpen) {
       // Attach a global click event listener when the cart is open
       document.addEventListener('click', handleOutsideClick);
     }
@@ -36,7 +37,7 @@ export const Navbar = () => {
     return () => {
       document.removeEventListener('click', handleOutsideClick);
     };
-  }, [open]);
+  }, [cartOpen]);
 
   return (
     <div className={styles.navbar}>
@@ -70,14 +71,15 @@ export const Navbar = () => {
             <SearchIcon />
             <PersonOutlinedIcon />
             <FavoriteBorderOutlinedIcon />
-            <div className={styles.cartIcon} onClick={() => setOpen(!open)} ref={cartRef}>
+            <div className={styles.cartIcon} onClick={() => setCartOpen(!cartOpen)} ref={cartRef}>
               <ShoppingCartOutlinedIcon />
               <span className={styles.itemsCounter}>{products.length}</span>
             </div>
           </div>
         </div>
       </div>
-      {open && <Cart />}
+      {cartOpen && <Cart />}
+      <Wishlist/>
     </div>
   )
 }
