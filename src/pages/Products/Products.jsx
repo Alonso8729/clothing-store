@@ -5,10 +5,20 @@ import List from '../../components/List/List'
 import { useParams } from 'react-router-dom'
 
 export const Products = () => {
-  const [maxPrice, setMaxPrice] = useState(1000);
+  const [maxPrice, setMaxPrice] = useState(250);
   const [sort, setSort] = useState(null);
-
+  const [subCats, setSubCats] = useState([]);
   const catId = parseInt(useParams().id);
+
+  const handleChange = (e) => {
+    const isChecked = e.target.checked;
+    const val = e.target.value
+    setSubCats((prevSubCats) =>
+    isChecked ? [...prevSubCats, val] : prevSubCats.filter((item) => item !== val)
+  );
+  console.log(subCats)
+
+  }
 
   const bgImages = ['https://images.pexels.com/photos/5705102/pexels-photo-5705102.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
     'https://images.pexels.com/photos/1536619/pexels-photo-1536619.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
@@ -24,19 +34,19 @@ export const Products = () => {
         <div className={styles.filterItem}>
           <h2 className={styles.h2}>Product Categories</h2>
           <div className={styles.inputItem}>
-            <input type="checkbox" id='1' value={1} />
+            <input type="checkbox" id='1' onChange={handleChange} value={'shirt'} />
             <label htmlFor="1">Shirts</label>
           </div>
           <div className={styles.inputItem}>
-            <input type="checkbox" id='2' value={1} />
+            <input type="checkbox" id='2' onChange={handleChange} value={'dress'} />
             <label htmlFor="2">Dresses</label>
           </div>
           <div className={styles.inputItem}>
-            <input type="checkbox" id='3' value={1} />
+            <input type="checkbox" id='3' onChange={handleChange} value={'coat'} />
             <label htmlFor="3">Coats</label>
           </div>
           <div className={styles.inputItem}>
-            <input type="checkbox" id='4' value={1} />
+            <input type="checkbox" id='4' onChange={handleChange} value={'jacket'} />
             <label htmlFor="4">Jackets</label>
           </div>
         </div>
@@ -44,7 +54,7 @@ export const Products = () => {
           <h2 className={styles.h2}>Filter by price</h2>
           <div className={styles.inputItem}>
             <span>0</span>
-            <input type="range" id='range' min={0} max={1000} onChange={(e) => setMaxPrice(e.target.value)} />
+            <input type="range" id='range' min={0} max={250} onChange={(e) => setMaxPrice(e.target.value)} />
             <span>1000</span>
           </div>
         </div>
@@ -62,7 +72,7 @@ export const Products = () => {
       </div>
       <div className={styles.right}>
         <img className={styles.catImg} src={bgImages[catId - 1]} />
-        <List catId={catId} maxPrice={maxPrice} sort={sort} />
+        <List catId={catId} maxPrice={maxPrice} sort={sort} subCats={subCats} />
       </div>
     </div>
   )
