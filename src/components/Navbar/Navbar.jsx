@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useRef, useEffect } from 'react';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import SearchIcon from '@mui/icons-material/Search';
 import PersonOutlinedIcon from '@mui/icons-material/PersonOutlined'; import PermIdentityIcon from '@mui/icons-material/PermIdentity';
@@ -13,6 +13,30 @@ import { useSelector } from 'react-redux'
 export const Navbar = () => {
   const [open, setOpen] = useState(false)
   const products = useSelector(state => state.cart.products)
+  const cartRef = useRef(null);
+
+  const closeCart = () => {
+    setOpen(false);
+  };
+
+  useEffect(() => {
+    const handleOutsideClick = (e) => {
+      if (cartRef.current && !cartRef.current.contains(e.target)) {
+        // Clicked outside the cart, close it
+        closeCart();
+      }
+    };
+
+    if (open) {
+      // Attach a global click event listener when the cart is open
+      document.addEventListener('click', handleOutsideClick);
+    }
+
+    // Clean up the event listener when the component unmounts or when the cart is closed
+    return () => {
+      document.removeEventListener('click', handleOutsideClick);
+    };
+  }, [open]);
 
   return (
     <div className={styles.navbar}>
@@ -46,7 +70,7 @@ export const Navbar = () => {
             <SearchIcon />
             <PersonOutlinedIcon />
             <FavoriteBorderOutlinedIcon />
-            <div className={styles.cartIcon} onClick={e => setOpen(!open)}>
+            <div className={styles.cartIcon} onClick={() => setOpen(!open)} ref={cartRef}>
               <ShoppingCartOutlinedIcon />
               <span className={styles.itemsCounter}>{products.length}</span>
             </div>
