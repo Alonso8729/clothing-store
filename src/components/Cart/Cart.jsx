@@ -1,7 +1,5 @@
 import React, { useState } from 'react'
 import styles from './Cart.module.css'
-import imgOneFront from '../../assets/Cards/img1-front.jpg'
-import imgOneBack from '../../assets/Cards/img1-back.jpg'
 import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
 import { useSelector, useDispatch } from "react-redux"
 import { deleteFromCart, resetCart } from '../../redux/cartReducer';
@@ -25,12 +23,12 @@ const Cart = () => {
             </h1>
             {products?.map(item => (
                 <div key={item.id} className={styles.item}>
-                    <img src={item.img} alt="" className={styles.img} />
+                    <img src={item.img} className={styles.img} />
                     <div className={styles.details}>
                         <h1 className={styles.title}>
                             {item.title}
                         </h1>
-                        <p>{item.desc?.substring(0, 100)}</p>
+                        <p className={styles.desc}>{item.desc?.substring(0, 100)}</p>
                         <div className={styles.price}>{item.quantity} X ${item.price}</div>
                     </div>
                     <DeleteOutlineIcon className={styles.delete} onClick={() => dispatch(deleteFromCart(item.id))} />
