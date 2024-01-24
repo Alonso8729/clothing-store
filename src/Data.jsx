@@ -11,6 +11,7 @@ const data = [
         description: 'Cotton sweatshirt. Hood and long sleeves. Matching tonal rib trim.',
         productType: 'Sweatshirt',
         tags: ['Women', 'Top', 'Hoodies'],
+        subCat:'shirt'
     },
     {
         id: 2,
@@ -24,6 +25,7 @@ const data = [
         desc: 'Jacket made of faux suede. Ribbed elasticated neck and long sleeves. Welt pockets at the hip. Ribbed hem. Zip-up front.',
         productType: 'Jacket',
         tags: ['Men', 'Top', 'Jackets'],
+        subCat:'jacket'
     },
     {
         id: 3,
@@ -37,6 +39,7 @@ const data = [
         desc: 'Denim dungarees with a straight-cut neckline and adjustable straps. Snap-button fastenings on the sides. Front pockets and back patch pockets..',
         productType: 'Dungarees',
         tags: ['Kids', 'Top', 'Dungarees'],
+        subCat:'jacket'
     },
     {
         id: 4,
@@ -50,6 +53,8 @@ const data = [
         desc: 'Relaxed fit shirt with a camp collar. Side vents at the hem. Button-up front.',
         productType: 'Shirt',
         tags: ['Men', 'Top', 'Shirts'],
+        subCat:'shirt'
+
     },
     {
         id: 5,
@@ -63,6 +68,8 @@ const data = [
         desc: 'Lapel collar coat with long sleeves with shoulder pads. Front double welt pockets. Back slit. Front button closure.',
         productType: 'Coat',
         tags: ['Women', 'Top', 'Coats'],
+        subCat:'coat'
+
     },
     {
         id: 6,
@@ -76,6 +83,8 @@ const data = [
         desc: 'Hooded coat with long sleeves. Front welt pockets. Self belt closure.',
         productType: 'Coat',
         tags: ['Women', 'Top', 'Coats'],
+        subCat:'coat'
+
     },
     {
         id: 7,
@@ -89,6 +98,8 @@ const data = [
         desc: 'High collar sweater. Long sleeves. Rib trim.',
         productType: 'Sweater',
         tags: ['Men', 'Top', 'Sweater'],
+        subCat:'shirt'
+
     },
     {
         id: 8,
@@ -102,6 +113,8 @@ const data = [
         desc: 'Relaxed fit sweater. Lapel collar with front slit and button closure. Long sleeves. Rib trim.',
         productType: 'Sweater',
         tags: ['Men', 'Top', 'Sweater'],
+        subCat:'shirt'
+
     },
     {
         id: 9,
@@ -115,6 +128,8 @@ const data = [
         desc: 'Cardigan with V-neckline and long sleeves. Textured cable-knit detail. Front button closure.',
         productType: 'Cardigan',
         tags: ['Women', 'Top', 'Cardigan'],
+        subCat:'jacket'
+
     },
     {
         id: 10,
@@ -128,6 +143,8 @@ const data = [
         desc: 'Dress with round neck and long sleeves. Side vents at hem. Rib trim.',
         productType: 'Dress',
         tags: ['Women', 'Top', 'Dress'],
+        subCat:'dress'
+
     },
     {
         id: 11,
@@ -141,6 +158,8 @@ const data = [
         desc: 'V-neck lapel collar shirt with long sleeves. Front button closure.',
         productType: 'Shirt',
         tags: ['Women', 'Top', 'Shirt'],
+        subCat:'shirt'
+
     },
     {
         id: 12,
@@ -154,6 +173,8 @@ const data = [
         desc: 'Relaxed fit parka made of dense cotton. Lapel collar and long sleeves. Flap patch pockets at hip and interior pocket. Front zip hidden by a snap button flap.',
         productType: 'Jacket',
         tags: ['Men', 'Top', 'Jackets'],
+        subCat:'jacket'
+
     },
     {
         id: 13,
@@ -167,6 +188,8 @@ const data = [
         desc: 'Relaxed fit overshirt. Lapel collar and long sleeves with buttoned cuffs. Chest patch pockets. Front button closure.',
         productType: 'Shirt',
         tags: ['Men', 'Top', 'Shirts'],
+        subCat:'shirt'
+
     },
     {
         id: 14,
@@ -180,6 +203,8 @@ const data = [
         desc: 'Knit polo shirt. Lapel collar with front button closure. Rib trim.',
         productType: 'Shirt',
         tags: ['Men', 'Top', 'Shirts'],
+        subCat:'shirt'
+
     },
     {
         id: 15,
