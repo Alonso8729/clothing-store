@@ -14,7 +14,7 @@
     flex: 1;
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    gap: 20px;
 }
 
 .images {
