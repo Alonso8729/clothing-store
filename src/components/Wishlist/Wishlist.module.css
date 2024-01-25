@@ -1,4 +1,4 @@
-.wishlist{
+.wishlist {
     position: absolute;
     top: 80px;
     right: 0;
@@ -31,9 +31,10 @@
 
 .add {
     color: #2879fe;
+    cursor: pointer;
 }
 
 .delete {
     color: red;
+    cursor: pointer;
 }
-
