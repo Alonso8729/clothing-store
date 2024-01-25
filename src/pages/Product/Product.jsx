@@ -4,8 +4,9 @@ import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import BalanceIcon from '@mui/icons-material/Balance';
 import { useLocation } from 'react-router-dom';
-import {useDispatch} from 'react-redux'
+import { useDispatch } from 'react-redux'
 import { addToCart } from '../../redux/cartReducer';
+import { addToWishlist } from '../../redux/wishlistReducer';
 
 export const Product = () => {
   const location = useLocation();
@@ -37,19 +38,26 @@ export const Product = () => {
           <span >{quantity}</span>
           <button className={styles.btn} onClick={() => setQuantity(prev => prev + 1)}>+</button>
         </div>
-        <button className={styles.add} onClick={()=>dispatch(addToCart({
-          id:item.id,
-          title:item.title,
-          desc:item.desc,
-          img:item.imgFront,
+        <button className={styles.add} onClick={() => dispatch(addToCart({
+          id: item.id,
+          title: item.title,
+          desc: item.desc,
+          img: item.imgFront,
           price: item.newPrice,
-          quantity:1
+          quantity
         }))}>
           <AddShoppingCartIcon />
           ADD TO CART
         </button>
         <div className={styles.link}>
-          <div className={styles.item}>
+          <div className={styles.item} onClick={() => dispatch(addToWishlist({
+              id: item.id,
+              title: item.title,
+              desc: item.desc,
+              img: item.imgFront,
+              price: item.newPrice,
+              quantity: 1
+            }))} >
             <FavoriteBorderIcon /> ADD TO WISHLIST
           </div>
           <div className={styles.item}>
