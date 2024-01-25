@@ -9,7 +9,7 @@ import { Link } from 'react-router-dom'
 import styles from './Navbar.module.css'
 import Cart from '../Cart/Cart';
 import { useSelector } from 'react-redux'
-import Wishlist from '../WIshlist/Wishlist';
+import Wishlist from '../Wishlist/Wishlist';
 
 export const Navbar = () => {
   const [cartOpen, setCartOpen] = useState(false)
