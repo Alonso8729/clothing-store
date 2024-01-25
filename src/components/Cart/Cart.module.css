@@ -29,9 +29,7 @@
     font-size: 24px;
 }
 
-.desc{
-    max-width: 250px;
-}
+
 
 .details>h1 {
     font-size: 18px;
@@ -42,6 +40,8 @@
     color: gray;
     margin-bottom: 10px;
     font-size: 14px;
+    max-width: 250px;
+
 }
 
 .price {

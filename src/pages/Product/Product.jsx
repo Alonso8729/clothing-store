@@ -43,7 +43,7 @@ export const Product = () => {
           desc:item.desc,
           img:item.imgFront,
           price: item.newPrice,
-          quantity
+          quantity:1
         }))}>
           <AddShoppingCartIcon />
           ADD TO CART
