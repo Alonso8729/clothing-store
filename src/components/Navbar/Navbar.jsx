@@ -11,29 +11,45 @@ import Cart from '../Cart/Cart';
 import { useSelector } from 'react-redux'
 import Wishlist from '../Wishlist/Wishlist';
 
+
 export const Navbar = () => {
   const [cartOpen, setCartOpen] = useState(false)
   const products = useSelector(state => state.cart.products)
   const cartRef = useRef(null);
-
+  const wishRef = useRef(null)
+  const [wishlistOpen, setWishlistOpen] = useState(false)
   const closeCart = () => {
     setCartOpen(false);
   };
 
+
+  const closeWishlist = () => {
+    setWishlistOpen(false);
+  }
+
+  useEffect(() => {
+    const handleOutsideClick = (e) => {
+      if (wishRef.current && !wishRef.current.contains(e.target))
+        closeWishlist()
+    }
+    if (wishlistOpen)
+      document.addEventListener('click', handleOutsideClick)
+    return () => {
+      document.removeEventListener('click', handleOutsideClick)
+    }
+  }, [wishlistOpen])
+
   useEffect(() => {
     const handleOutsideClick = (e) => {
       if (cartRef.current && !cartRef.current.contains(e.target)) {
-        // Clicked outside the cart, close it
         closeCart();
       }
     };
 
     if (cartOpen) {
-      // Attach a global click event listener when the cart is open
       document.addEventListener('click', handleOutsideClick);
     }
 
-    // Clean up the event listener when the component unmounts or when the cart is closed
     return () => {
       document.removeEventListener('click', handleOutsideClick);
     };
@@ -70,7 +86,9 @@ export const Navbar = () => {
           <div className={styles.icons}>
             <SearchIcon />
             <PersonOutlinedIcon />
-            <FavoriteBorderOutlinedIcon />
+            <div className={styles.wish} onClick={() => setWishlistOpen(!wishlistOpen)} ref={wishRef}>
+              <FavoriteBorderOutlinedIcon />
+            </div>
             <div className={styles.cartIcon} onClick={() => setCartOpen(!cartOpen)} ref={cartRef}>
               <ShoppingCartOutlinedIcon />
               <span className={styles.itemsCounter}>{products.length}</span>
@@ -79,7 +97,7 @@ export const Navbar = () => {
         </div>
       </div>
       {cartOpen && <Cart />}
-      <Wishlist/>
+      {wishlistOpen && <Wishlist/>}
     </div>
   )
 }
