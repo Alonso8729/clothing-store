@@ -9,6 +9,13 @@
     padding: 20px;
 }
 
+.h1 {
+    margin: 30px;
+    color: gray;
+    font-weight: 400;
+    font-size: 24px;
+}
+
 .img {
     height: 100px;
     width: 80px;
