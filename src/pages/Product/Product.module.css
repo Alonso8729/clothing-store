@@ -88,6 +88,7 @@
     font-size: 18px;
     font-weight: 300;
     text-align: justify;
+    max-width: 600px;
 }
 
 .info {
