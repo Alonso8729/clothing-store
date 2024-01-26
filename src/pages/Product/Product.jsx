@@ -16,6 +16,17 @@ export const Product = () => {
   const images = [item.imgFront, item.imgBack];
   const dispatch = useDispatch();
 
+  const handleAddToWishlist = () => {
+    dispatch(addToWishlist({
+      id: item.id,
+      title: item.title,
+      desc: item.desc,
+      img: item.imgFront,
+      price: item.newPrice,
+      quantity: 1
+    }));
+  };
+
   return (
     <div className={styles.product}>
       <div className={styles.left}>
@@ -50,14 +61,7 @@ export const Product = () => {
           ADD TO CART
         </button>
         <div className={styles.link}>
-          <div className={styles.item} onClick={() => dispatch(addToWishlist({
-              id: item.id,
-              title: item.title,
-              desc: item.desc,
-              img: item.imgFront,
-              price: item.newPrice,
-              quantity: 1
-            }))} >
+          <div className={styles.item} onClick={handleAddToWishlist} >
             <FavoriteBorderIcon /> ADD TO WISHLIST
           </div>
           <div className={styles.item}>
