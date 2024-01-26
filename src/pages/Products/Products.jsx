@@ -16,8 +16,6 @@ export const Products = () => {
     setSubCats((prevSubCats) =>
     isChecked ? [...prevSubCats, val] : prevSubCats.filter((item) => item !== val)
   );
-  console.log(subCats)
-
   }
 
   const bgImages = ['https://images.pexels.com/photos/5705102/pexels-photo-5705102.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
