@@ -12,7 +12,7 @@ export const cartSlice = createSlice({
         item.quantity+= action.payload.quantity;
       }
       else{
-        state.products.push(action.payload)
+        state.products = [...state.products,action.payload];
       }
     },
     deleteFromCart: (state,action) => {
@@ -26,5 +26,4 @@ export const cartSlice = createSlice({
 
 // Action creators are generated for each case reducer function
 export const { addToCart, deleteFromCart, resetCart } = cartSlice.actions
-
 export default cartSlice.reducer
