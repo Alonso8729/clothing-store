@@ -19,7 +19,7 @@ const Cart = () => {
     return (
         <div className={styles.cart}>
             <h1 className={styles.h1}>
-                {products.length === 0 ? 'No':''} Products in your cart
+                {products.length === 0 ? 'The cart is empty':''} 
             </h1>
             {products?.map(item => (
                 <div key={item.id} className={styles.item}>
