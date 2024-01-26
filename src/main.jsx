@@ -5,9 +5,10 @@ import App from "./App";
 import { Provider } from 'react-redux'
 import cartReducer from "./redux/cartReducer";
 import { configureStore } from '@reduxjs/toolkit'
+import wishlistReducer from "./redux/wishlistReducer";
 
 const store = configureStore({
-    reducer: {cart:cartReducer}
+    reducer: { cart: cartReducer, wishlist: wishlistReducer }
 })
 
 ReactDOM.createRoot(document.getElementById("root")).render(
