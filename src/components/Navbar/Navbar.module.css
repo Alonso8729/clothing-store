@@ -63,3 +63,17 @@
     align-items: center;
     justify-content: center;
 }
+
+.searchBar {
+   display: flex;
+}
+
+input[type='search'] {
+    z-index: 3;
+    padding: 7px;
+    border-radius: 7px;
+    outline: none;
+    border: 1px solid grey;
+    align-items: center;
+ 
+}

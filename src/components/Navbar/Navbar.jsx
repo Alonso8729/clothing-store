@@ -15,6 +15,7 @@ import Wishlist from '../Wishlist/Wishlist';
 export const Navbar = () => {
   const [cartOpen, setCartOpen] = useState(false)
   const products = useSelector(state => state.cart.products)
+  const [openSearch, setOpenSearch] = useState(false)
   const cartRef = useRef(null);
   const wishRef = useRef(null)
   const [wishlistOpen, setWishlistOpen] = useState(false)
@@ -77,14 +78,23 @@ export const Navbar = () => {
             <Link className={styles.linkStyle} to='products/3'>Kids</Link>
           </div>
         </div>
+
         <div className={styles.center}>
           <Link className={styles.linkStyle} to=''>Trendify</Link>
+          
         </div>
+
         <div className={styles.right}>
+
           <Link className={styles.linkStyle} to=''>About</Link>
           <Link className={styles.linkStyle} to=''>Contact</Link>
           <div className={styles.icons}>
-            <SearchIcon />
+            <div className={styles.searchBar}>
+            {openSearch &&
+            <input type="search" id='search' autoComplete='off' />
+          }
+              <SearchIcon onClick={() => setOpenSearch(true)} />
+            </div>
             <PersonOutlinedIcon />
             <div className={styles.wish} onClick={() => setWishlistOpen(!wishlistOpen)} ref={wishRef}>
               <FavoriteBorderOutlinedIcon />
@@ -93,11 +103,12 @@ export const Navbar = () => {
               <ShoppingCartOutlinedIcon />
               <span className={styles.itemsCounter}>{products.length}</span>
             </div>
+
           </div>
         </div>
       </div>
       {cartOpen && <Cart />}
-      {wishlistOpen && <Wishlist/>}
+      {wishlistOpen && <Wishlist />}
     </div>
   )
 }
