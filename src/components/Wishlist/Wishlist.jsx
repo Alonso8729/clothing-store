@@ -16,7 +16,7 @@ const Wishlist = () => {
             <h1 className={styles.h1}>{wishlistItems.length === 0 ? 'Wishlist is empty' : ''}</h1>
             {wishlistItems?.map((item) => (
                     <div key={item.id} className={styles.item}>
-                        <img className={styles.img} src={item.imgFront} ></img>
+                        <img className={styles.img} src={item.img} ></img>
                         <div className={styles.details}>
                             <h3 className={styles.title}>{item.title}</h3>
                             <p className={styles.desc}>{item.desc?.substring(0, 150)}</p>
