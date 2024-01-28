@@ -2,7 +2,7 @@
 const data = [
     {
         id: 1,
-        catId: 2,
+        catId: [2,3],
         title: 'Cropped Hood Sweatshirt',
         imgFront: 'https://static.zara.net/photos///2024/V/0/1/p/3199/629/803/12/w/750/3199629803_1_1_1.jpg?ts=1702382096749',
         imgBack: 'https://static.zara.net/photos///2024/V/0/1/p/3199/629/803/12/w/750/3199629803_2_3_1.jpg?ts=1701964304634',
@@ -13,9 +13,10 @@ const data = [
         tags: ['Women', 'Top', 'Hoodies'],
         subCat: 'shirt'
     },
+    
     {
         id: 2,
-        catId: 4,
+        catId: [4],
         title: 'Faux Suede Jacket',
         imgFront: 'https://static.zara.net/photos///2024/V/0/2/p/8574/500/806/2/w/750/8574500806_1_1_1.jpg?ts=1704298918911',
         imgBack: 'https://static.zara.net/photos///2024/V/0/2/p/8574/500/806/2/w/750/8574500806_2_2_1.jpg?ts=1704298918810',
@@ -29,7 +30,7 @@ const data = [
     },
     {
         id: 3,
-        catId: 6,
+        catId: [6],
         title: 'Denim Dungarees',
         imgFront: 'https://static.zara.net/photos///2023/I/0/3/p/0122/550/427/403/w/750/0122550427_1_1_1.jpg?ts=1695292763542',
         imgBack: 'https://static.zara.net/photos///2023/I/0/3/p/0122/550/427/2/w/750/0122550427_6_2_1.jpg?ts=1694009028890',
@@ -43,7 +44,7 @@ const data = [
     },
     {
         id: 4,
-        catId: 1,
+        catId: [1],
         title: 'Geometric shirt',
         imgFront: 'https://static.zara.net/photos///2024/V/0/2/p/5679/307/658/2/w/750/5679307658_1_1_1.jpg?ts=1704815061732',
         imgBack: 'https://static.zara.net/photos///2024/V/0/2/p/5679/307/658/2/w/750/5679307658_2_2_1.jpg?ts=1704815062752',
@@ -58,7 +59,7 @@ const data = [
     },
     {
         id: 5,
-        catId: 3,
+        catId: [3],
         title: 'Fitted soft coat',
         imgFront: 'https://static.zara.net/photos///2024/V/0/1/p/8073/253/704/18/w/750/8073253704_1_1_1.jpg?ts=1702382195475',
         imgBack: 'https://static.zara.net/photos///2024/V/0/1/p/8073/253/704/18/w/750/8073253704_2_6_1.jpg?ts=1702382195971',
@@ -73,7 +74,7 @@ const data = [
     },
     {
         id: 6,
-        catId: 3,
+        catId: [3],
         title: 'Soft hooded coat',
         imgFront: 'https://static.zara.net/photos///2024/V/0/1/p/3046/266/802/18/w/750/3046266802_1_1_1.jpg?ts=1702468356661',
         imgBack: 'https://static.zara.net/photos///2024/V/0/1/p/3046/266/802/18/w/750/3046266802_2_5_1.jpg?ts=1702468356735',
@@ -88,7 +89,7 @@ const data = [
     },
     {
         id: 7,
-        catId: 3,
+        catId: [3],
         title: 'Soft sweater',
         imgFront: 'https://static.zara.net/photos///2023/I/0/2/p/5536/311/251/2/w/750/5536311251_1_1_1.jpg?ts=1696257633504',
         imgBack: 'https://static.zara.net/photos///2023/I/0/2/p/5536/311/251/2/w/750/5536311251_2_2_1.jpg?ts=1696257633129',
@@ -103,7 +104,7 @@ const data = [
     },
     {
         id: 8,
-        catId: 3,
+        catId: [3],
         title: 'Polo sweater',
         imgFront: 'https://static.zara.net/photos///2024/V/0/2/p/5755/406/600/2/w/750/5755406600_2_1_1.jpg?ts=1704893015592',
         imgBack: 'https://static.zara.net/photos///2024/V/0/2/p/5755/406/600/2/w/750/5755406600_2_2_1.jpg?ts=1704893015670',
@@ -118,7 +119,7 @@ const data = [
     },
     {
         id: 9,
-        catId: 2,
+        catId: [2],
         title: 'Cardigan',
         imgFront: 'https://static.zara.net/photos///2023/I/0/1/p/9874/104/330/17/w/750/9874104330_1_1_1.jpg?ts=1699013819997',
         imgBack: 'https://static.zara.net/photos///2023/I/0/1/p/9874/104/330/17/w/750/9874104330_2_4_1.jpg?ts=1699013821736',
@@ -133,7 +134,7 @@ const data = [
     },
     {
         id: 10,
-        catId: 2,
+        catId: [2],
         title: 'Striped dress',
         imgFront: 'https://static.zara.net/photos///2024/V/0/1/p/3519/167/104/2/w/750/3519167104_1_1_1.jpg?ts=1704791155217',
         imgBack: 'https://static.zara.net/photos///2024/V/0/1/p/3519/167/104/2/w/750/3519167104_2_2_1.jpg?ts=1704791155236',
@@ -148,7 +149,7 @@ const data = [
     },
     {
         id: 11,
-        catId: 2,
+        catId: [2,3],
         title: 'Oxford shirt',
         imgFront: 'https://static.zara.net/photos///2024/V/0/1/p/8372/390/043/18/w/750/8372390043_1_1_1.jpg?ts=1705309228032',
         imgBack: 'https://static.zara.net/photos///2024/V/0/1/p/8372/390/043/18/w/750/8372390043_2_5_1.jpg?ts=1705309227830',
@@ -163,7 +164,7 @@ const data = [
     },
     {
         id: 12,
-        catId: 4,
+        catId: [4],
         title: 'Cotton parka',
         imgFront: 'https://static.zara.net/photos///2024/V/0/2/p/0706/188/711/32/w/750/0706188711_1_1_1.jpg?ts=1705493806228',
         imgBack: 'https://static.zara.net/photos///2024/V/0/2/p/0706/188/711/2/w/750/0706188711_6_2_1.jpg?ts=1703838869773',
@@ -178,7 +179,7 @@ const data = [
     },
     {
         id: 13,
-        catId: 4,
+        catId: [4],
         title: 'Plaid overshirt',
         imgFront: 'https://static.zara.net/photos///2024/V/0/2/p/4054/659/064/2/w/750/4054659064_2_1_1.jpg?ts=1703668654960',
         imgBack: 'https://static.zara.net/photos///2024/V/0/2/p/4054/659/064/2/w/750/4054659064_2_2_1.jpg?ts=1703668655059',
@@ -193,7 +194,7 @@ const data = [
     },
     {
         id: 14,
-        catId: 4,
+        catId: [4],
         title: 'Striped polo',
         imgFront: 'https://static.zara.net/photos///2024/V/0/2/p/7140/402/330/2/w/750/7140402330_2_1_1.jpg?ts=1704813058861',
         imgBack: 'https://static.zara.net/photos///2024/V/0/2/p/7140/402/330/2/w/750/7140402330_2_2_1.jpg?ts=1704813058308',
@@ -208,7 +209,7 @@ const data = [
     },
     {
         id: 15,
-        catId: 5,
+        catId: [5],
         title: 'Lip gloss',
         imgFront: 'https://static.zara.net/photos///2022/I/2/1/p/4130/344/163/2/w/315/4130344163_6_1_1.jpg?ts=1662557946376',
         imgBack: 'https://static.zara.net/photos///2023/I/2/1/p/4130/344/163/2/w/750/4130344163_2_2_1.jpg?ts=1689104064179',
@@ -221,7 +222,7 @@ const data = [
     },
     {
         id: 16,
-        catId: 5,
+        catId: [5],
         title: 'Elixir perfume 50ml',
         imgFront: 'https://static.zara.net/photos///2024/V/2/1/p/0110/612/999/2/w/750/0110612999_6_1_1.jpg?ts=1700221275094',
         imgBack: 'https://static.zara.net/photos///2024/V/2/1/p/0110/612/999/2/w/750/0110612999_6_2_1.jpg?ts=1700216216487',
@@ -234,7 +235,7 @@ const data = [
     },
     {
         id: 17,
-        catId: 5,
+        catId: [5],
         title: 'Gardenia perfume 50ml',
         imgFront: 'https://static.zara.net/photos///2023/V/2/1/p/0120/828/999/2/w/750/0120828999_6_1_1.jpg?ts=1683643090526',
         imgBack: 'https://static.zara.net/photos///2023/V/2/1/p/0120/828/999/2/w/750/0120828999_6_2_1.jpg?ts=1678435289603',
@@ -247,7 +248,7 @@ const data = [
     },
     {
         id: 18,
-        catId: 5,
+        catId: [5],
         title: 'Eyelash serum',
         imgFront: 'https://static.zara.net/photos///2023/I/2/1/p/4660/200/991/2/w/750/4660200991_6_1_1.jpg?ts=1692805848210',
         imgBack: 'https://static.zara.net/photos///2023/I/2/1/p/4660/200/991/2/w/750/4660200991_2_1_1.jpg?ts=1694617891166',
@@ -258,7 +259,45 @@ const data = [
         productType: 'Serum',
         tags: ['Women', 'Accessories'],
     },
-
+    {
+        id: 19,
+        catId: [6],
+        title: 'Rug rat T-shirt',
+        imgFront: 'https://nununu.com/cdn/shop/files/ss23-03-_76__72_460x.jpg?v=1706093878',
+        imgBack: 'https://nununu.com/cdn/shop/files/ss23-03-_82__72_b90783e6-7347-43e8-9b7e-ac72ab84d431_900x.jpg?v=1706093884',
+        isNew: true,
+        oldPrice: 20,
+        newPrice: 15.90,
+        desc: 'natural gender-neutral single cotton t that almost squeaks back.',
+        productType: 'Shirt',
+        tags: ['Kids', 'shirts'],
+    },
+    {
+        id: 20,
+        catId: [6],
+        title: 'Bolt T-shirt',
+        imgFront: 'https://nununu.com/cdn/shop/files/more-ss23.1-_26__72_460x.jpg?v=1706092717',
+        imgBack: 'https://nununu.com/cdn/shop/files/more-ss23.1-_28__72_900x.jpg?v=1706092720',
+        isNew: true,
+        oldPrice: 25,
+        newPrice: 19.90,
+        desc: 'single cotton with a basic cut.',
+        productType: 'Shirt',
+        tags: ['Kids', 'shirts'],
+    },
+    {
+        id: 21,
+        catId: [6],
+        title: 'Smirk tank top',
+        imgFront: 'https://nununu.com/cdn/shop/files/31_72_69619ba6-6be5-4d24-a2b1-777e82b0a1f6_460x.jpg?v=1706095705',
+        imgBack: 'https://nununu.com/cdn/shop/files/35_72_921dbaa0-05ba-4bb7-a6af-49a5d953268a_900x.jpg?v=1706095706',
+        isNew: false,
+        oldPrice: 35,
+        newPrice: 29.90,
+        desc: 'raw edges | sleeveless | single cotton.',
+        productType: 'Shirt',
+        tags: ['Kids', 'shirts'],
+    },
 
 ]
 export default data

@@ -4,7 +4,7 @@ import Card from '../Card/Card'
 import data from '../../Data.jsx'
 
 const List = ({ catId, maxPrice, sort, subCats }) => {
-    let filteredData = data.filter(item => item.catId === catId && item.newPrice <= maxPrice)
+    let filteredData = data.filter(item => item.catId.includes(catId) && item.newPrice <= maxPrice)
 
     if (sort) { // The user choose to sort items by price
         filteredData.sort((a, b) => {
