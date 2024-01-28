@@ -10,6 +10,7 @@ import styles from './Navbar.module.css'
 import Cart from '../Cart/Cart';
 import { useSelector } from 'react-redux'
 import Wishlist from '../Wishlist/Wishlist';
+import SearchBar from '../SearchBar/SearchBar';
 
 
 export const Navbar = () => {
@@ -23,6 +24,9 @@ export const Navbar = () => {
     setCartOpen(false);
   };
 
+  const closeSearch = () =>{
+    setOpenSearch(false)
+  }
 
   const closeWishlist = () => {
     setWishlistOpen(false);
@@ -57,58 +61,64 @@ export const Navbar = () => {
   }, [cartOpen]);
 
   return (
-    <div className={styles.navbar}>
-      <div className={styles.wrapper}>
-        <div className={styles.left}>
-          <div className={styles.item}>
-            <img src={en} />
-            <KeyboardArrowDownIcon />
-          </div>
-          <div className={styles.item}>
-            <span>USD</span>
-            <KeyboardArrowDownIcon />
-          </div>
-          <div className={styles.item}>
-            <Link className={styles.linkStyle} to='products/1'>Women</Link>
-          </div>
-          <div className={styles.item}>
-            <Link className={styles.linkStyle} to='products/2'>Men</Link>
-          </div>
-          <div className={styles.item}>
-            <Link className={styles.linkStyle} to='products/3'>Kids</Link>
-          </div>
-        </div>
+    <div className={styles.top}>
+      {openSearch ? (
+          <SearchBar closeSearch={closeSearch}/>
+        ) :
+          (
+      <div className={styles.navbar}>
+            <div className={styles.wrapper}>
+              <div className={styles.left}>
+                <div className={styles.item}>
+                  <img src={en} />
+                  <KeyboardArrowDownIcon />
+                </div>
+                <div className={styles.item}>
+                  <span>USD</span>
+                  <KeyboardArrowDownIcon />
+                </div>
+                <div className={styles.item}>
+                  <Link className={styles.linkStyle} to='products/1'>Women</Link>
+                </div>
+                <div className={styles.item}>
+                  <Link className={styles.linkStyle} to='products/2'>Men</Link>
+                </div>
+                <div className={styles.item}>
+                  <Link className={styles.linkStyle} to='products/3'>Kids</Link>
+                </div>
+              </div>
 
-        <div className={styles.center}>
-          <Link className={styles.linkStyle} to=''>Trendify</Link>
+              <div className={styles.center}>
+                <Link className={styles.linkStyle} to=''>Trendify</Link>
+
+              </div>
+
+              <div className={styles.right}>
+
+                <Link className={styles.linkStyle} to=''>About</Link>
+                <Link className={styles.linkStyle} to=''>Contact</Link>
+                <div className={styles.icons}>
+                  <div className={styles.searchBar}>
+                    <SearchIcon onClick={() => setOpenSearch(true)} />
+                  </div>
+                  <PersonOutlinedIcon />
+                  <div className={styles.wish} onClick={() => setWishlistOpen(!wishlistOpen)} ref={wishRef}>
+                    <FavoriteBorderOutlinedIcon />
+                  </div>
+                  <div className={styles.cartIcon} onClick={() => setCartOpen(!cartOpen)} ref={cartRef}>
+                    <ShoppingCartOutlinedIcon />
+                    <span className={styles.itemsCounter}>{products.length}</span>
+                  </div>
+                </div>
+              </div>
+            </div>
           
-        </div>
-
-        <div className={styles.right}>
-
-          <Link className={styles.linkStyle} to=''>About</Link>
-          <Link className={styles.linkStyle} to=''>Contact</Link>
-          <div className={styles.icons}>
-            <div className={styles.searchBar}>
-            {openSearch &&
-            <input type="search" id='search' autoComplete='off' />
-          }
-              <SearchIcon onClick={() => setOpenSearch(true)} />
-            </div>
-            <PersonOutlinedIcon />
-            <div className={styles.wish} onClick={() => setWishlistOpen(!wishlistOpen)} ref={wishRef}>
-              <FavoriteBorderOutlinedIcon />
-            </div>
-            <div className={styles.cartIcon} onClick={() => setCartOpen(!cartOpen)} ref={cartRef}>
-              <ShoppingCartOutlinedIcon />
-              <span className={styles.itemsCounter}>{products.length}</span>
-            </div>
-
-          </div>
-        </div>
+        {cartOpen && <Cart />}
+        {wishlistOpen && <Wishlist />}
       </div>
-      {cartOpen && <Cart />}
-      {wishlistOpen && <Wishlist />}
+      )}
     </div>
+
   )
+
 }

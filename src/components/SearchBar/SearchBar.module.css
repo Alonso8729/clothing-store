@@ -1,0 +1,48 @@
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+  -webkit-appearance:none;
+}
+
+  .searchBar {
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    
+  }
+
+  .searchDiv{
+    justify-content: center;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .searchInput {
+      padding: 16px 10px 15px 15px;
+      outline: none;
+      border: none;
+      width: 30%;
+      background-color: #dbdada;
+      font-size: 20px;
+  }
+
+  .btn {
+      background-color: #dbdada;
+      outline: none;
+      border: none;
+      padding: 17px 10px 10px 4px;
+      cursor: pointer;
+  }
+
+ .icon {
+    margin-left: 15px;
+    cursor: pointer;
+ }
+
+ .searchIcon{
+    font-size: 20px;
+ }
