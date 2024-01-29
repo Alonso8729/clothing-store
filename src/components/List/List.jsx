@@ -3,9 +3,14 @@ import styles from './List.module.css'
 import Card from '../Card/Card'
 import data from '../../Data.jsx'
 
-const List = ({ catId, maxPrice, sort, subCats }) => {
-    let filteredData = data.filter(item => item.catId.includes(catId) && item.newPrice <= maxPrice)
-
+const List = ({ searchInput, catId, maxPrice, sort, subCats }) => {
+    let filteredData = data.filter(item => (
+        item.catId.includes(catId) && item.newPrice <= maxPrice ||
+        searchInput && (searchInput.toLowerCase() === item.title.toLowerCase() ||
+            searchInput.toLowerCase() === item.productType.toLowerCase()||
+            item.desc.includes(searchInput.toLowerCase())) 
+    )
+    )
     if (sort) { // The user choose to sort items by price
         filteredData.sort((a, b) => {
             if (sort === 'asc')
