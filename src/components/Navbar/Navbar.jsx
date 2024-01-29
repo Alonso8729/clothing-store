@@ -78,13 +78,13 @@ export const Navbar = () => {
                   <KeyboardArrowDownIcon />
                 </div>
                 <div className={styles.item}>
-                  <Link className={styles.linkStyle} to='products/1'>Women</Link>
+                  <Link className={styles.linkStyle} to='products/2'>Women</Link>
                 </div>
                 <div className={styles.item}>
-                  <Link className={styles.linkStyle} to='products/2'>Men</Link>
+                  <Link className={styles.linkStyle} to='products/4'>Men</Link>
                 </div>
                 <div className={styles.item}>
-                  <Link className={styles.linkStyle} to='products/3'>Kids</Link>
+                  <Link className={styles.linkStyle} to='products/6'>Kids</Link>
                 </div>
               </div>
 
