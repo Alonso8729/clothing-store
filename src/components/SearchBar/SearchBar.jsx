@@ -14,8 +14,8 @@ const SearchBar = ({ closeSearch }) => {
         <div className={styles.searchBar}>
             <div className={styles.searchDiv}>
                 <input type="search" className={styles.searchInput} value={searchField} onChange={(e) => handleChange(e)} autoComplete='off' placeholder='Search...' />
-                <button className={styles.btn}>
-                    <Link to={`products/${searchField}`} className='link'>
+                <button className={styles.btn} disabled={searchField.trim() === ''}>
+                    <Link to={searchField.trim() !== '' ? `products/${searchField}` : '/'} className='link'>
                         <SearchIcon className={styles.searchIcon} />
                     </Link>
                 </button>
