@@ -74,7 +74,7 @@ const data = [
     },
     {
         id: 6,
-        catId: [3],
+        catId: [1,3],
         title: 'Soft hooded coat',
         imgFront: 'https://static.zara.net/photos///2024/V/0/1/p/3046/266/802/18/w/750/3046266802_1_1_1.jpg?ts=1702468356661',
         imgBack: 'https://static.zara.net/photos///2024/V/0/1/p/3046/266/802/18/w/750/3046266802_2_5_1.jpg?ts=1702468356735',
@@ -119,7 +119,7 @@ const data = [
     },
     {
         id: 9,
-        catId: [2],
+        catId: [1,2],
         title: 'Cardigan',
         imgFront: 'https://static.zara.net/photos///2023/I/0/1/p/9874/104/330/17/w/750/9874104330_1_1_1.jpg?ts=1699013819997',
         imgBack: 'https://static.zara.net/photos///2023/I/0/1/p/9874/104/330/17/w/750/9874104330_2_4_1.jpg?ts=1699013821736',
@@ -134,7 +134,7 @@ const data = [
     },
     {
         id: 10,
-        catId: [2],
+        catId: [1,2],
         title: 'Striped dress',
         imgFront: 'https://static.zara.net/photos///2024/V/0/1/p/3519/167/104/2/w/750/3519167104_1_1_1.jpg?ts=1704791155217',
         imgBack: 'https://static.zara.net/photos///2024/V/0/1/p/3519/167/104/2/w/750/3519167104_2_2_1.jpg?ts=1704791155236',
@@ -149,7 +149,7 @@ const data = [
     },
     {
         id: 11,
-        catId: [2,3],
+        catId: [1,2,3],
         title: 'Oxford shirt',
         imgFront: 'https://static.zara.net/photos///2024/V/0/1/p/8372/390/043/18/w/750/8372390043_1_1_1.jpg?ts=1705309228032',
         imgBack: 'https://static.zara.net/photos///2024/V/0/1/p/8372/390/043/18/w/750/8372390043_2_5_1.jpg?ts=1705309227830',
@@ -164,7 +164,7 @@ const data = [
     },
     {
         id: 12,
-        catId: [4],
+        catId: [1,4],
         title: 'Cotton parka',
         imgFront: 'https://static.zara.net/photos///2024/V/0/2/p/0706/188/711/32/w/750/0706188711_1_1_1.jpg?ts=1705493806228',
         imgBack: 'https://static.zara.net/photos///2024/V/0/2/p/0706/188/711/2/w/750/0706188711_6_2_1.jpg?ts=1703838869773',
@@ -287,7 +287,7 @@ const data = [
     },
     {
         id: 21,
-        catId: [6],
+        catId: [1,6],
         title: 'Smirk tank top',
         imgFront: 'https://nununu.com/cdn/shop/files/31_72_69619ba6-6be5-4d24-a2b1-777e82b0a1f6_460x.jpg?v=1706095705',
         imgBack: 'https://nununu.com/cdn/shop/files/35_72_921dbaa0-05ba-4bb7-a6af-49a5d953268a_900x.jpg?v=1706095706',
