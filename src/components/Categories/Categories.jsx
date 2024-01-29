@@ -14,29 +14,29 @@ const Categories = () => {
             <div className={styles.col}>
                 <div className={styles.row}>
                     <img src={c1} className={styles.img} />
-                    <button className={styles.button}>
-                        <Link className='link' to='products/1'>
+                    <Link className='link' to='products/1'>
+                        <button className={styles.button}>
                             Sale
-                        </Link>
-                    </button>
+                        </button>
+                    </Link>
                 </div>
                 <div className={styles.row}>
                     <img src={c2} className={styles.img} />
-                    <button className={styles.button}>
-                        <Link to='products/2' className='link'>
+                    <Link to='products/2' className='link'>
+                        <button className={styles.button}>
                             Women
-                        </Link>
-                    </button>
+                        </button>
+                    </Link>
                 </div>
             </div>
             <div className={styles.col}>
                 <div className={styles.row}>
                     <img src={c3} className={styles.img} />
-                    <button className={styles.button}>
-                        <Link to='products/3' className='link'>
+                    <Link to='products/3' className='link'>
+                        <button className={styles.button}>
                             New Season
-                        </Link>
-                    </button>
+                        </button>
+                    </Link>
                 </div>
             </div>
             <div className={`${styles.col} ${styles.largeCol}`}>
@@ -44,31 +44,31 @@ const Categories = () => {
                     <div className={styles.col}>
                         <div className={styles.row}>
                             <img src={c4} className={styles.img} />
-                            <button className={styles.button}>
-                                <Link to='products/4' className='link'>
+                            <Link to='products/4' className='link'>
+                                <button className={styles.button}>
                                     Men
-                                </Link>
-                            </button>
+                                </button>
+                            </Link>
                         </div>
                     </div>
                     <div className={styles.col}>
                         <div className={styles.row}>
                             <img src={c5} className={styles.img} />
-                            <button className={styles.button}>
-                                <Link to='products/5' className='link'>
+                            <Link to='products/5' className='link'>
+                                <button className={styles.button}>
                                     Accessorries
-                                </Link>
-                            </button>
+                                </button>
+                            </Link>
                         </div>
                     </div>
                 </div>
                 <div className={styles.row}>
                     <img src='https://images.pexels.com/photos/7862291/pexels-photo-7862291.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1' className={styles.img} />
-                    <button className={styles.button}>
-                        <Link to='products/6' className='link'>
+                    <Link to='products/6' className='link'>
+                        <button className={styles.button}>
                             KIDS
-                        </Link>
-                    </button>
+                        </button>
+                    </Link>
                 </div>
             </div>
         </div>
