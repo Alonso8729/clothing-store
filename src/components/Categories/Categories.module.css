@@ -52,6 +52,7 @@
     background-color: white;
     text-transform: uppercase;
     font-weight: 500;
+    cursor: pointer;
 }
 
 .button:hover {
