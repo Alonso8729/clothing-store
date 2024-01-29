@@ -8,7 +8,9 @@ export const Products = () => {
   const [maxPrice, setMaxPrice] = useState(250);
   const [sort, setSort] = useState(null);
   const [subCats, setSubCats] = useState([]);
+  const searchResult = useParams().id
   const catId = parseInt(useParams().id);
+  
 
   const handleChange = (e) => {
     const isChecked = e.target.checked;
@@ -70,7 +72,7 @@ export const Products = () => {
       </div>
       <div className={styles.right}>
         <img className={styles.catImg} src={bgImages[catId - 1]} />
-        <List catId={catId} maxPrice={maxPrice} sort={sort} subCats={subCats} />
+        <List searchInput={searchResult} catId={catId} maxPrice={maxPrice} sort={sort} subCats={subCats} />
       </div>
     </div>
   )
