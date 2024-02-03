@@ -86,7 +86,7 @@ export const Navbar = () => {
 				(
 					<div className={styles.navbar}>
 						<div className={styles.left}>
-							{screenWidth <= 1024 ?
+							{screenWidth <= 768 ?
 								<MenuIcon className={styles.hamburger} onClick={toggleMenu} />
 								:
 								<>
@@ -116,7 +116,7 @@ export const Navbar = () => {
 								<div className={styles.searchBar}>
 									<SearchIcon onClick={() => setOpenSearch(true)} />
 								</div>
-								{screenWidth <= 1024 ?
+								{screenWidth <= 768 ?
 									''
 									:
 									<>
@@ -137,7 +137,7 @@ export const Navbar = () => {
 
 						{cartOpen && <Cart />}
 						{wishlistOpen && <Wishlist />}
-						{(isMenuOpen && screenWidth<=1024) && <Sidebar toggleMenu={toggleMenu} />}
+						{(isMenuOpen && screenWidth<=768) && <Sidebar toggleMenu={toggleMenu} />}
 					</div>
 				)}
 		</div>
