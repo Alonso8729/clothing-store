@@ -4,6 +4,7 @@ import SearchIcon from '@mui/icons-material/Search';
 import PersonOutlinedIcon from '@mui/icons-material/PersonOutlined'; import PermIdentityIcon from '@mui/icons-material/PermIdentity';
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlined';
+import MenuIcon from '@mui/icons-material/Menu';
 import en from '../../assets/img/en.png'
 import { Link } from 'react-router-dom'
 import styles from './Navbar.module.css'
@@ -14,111 +15,135 @@ import SearchBar from '../SearchBar/SearchBar';
 
 
 export const Navbar = () => {
-  const [cartOpen, setCartOpen] = useState(false)
-  const products = useSelector(state => state.cart.products)
-  const [openSearch, setOpenSearch] = useState(false)
-  const cartRef = useRef(null);
-  const wishRef = useRef(null)
-  const [wishlistOpen, setWishlistOpen] = useState(false)
-  const closeCart = () => {
-    setCartOpen(false);
-  };
+	const [cartOpen, setCartOpen] = useState(false)
+	const products = useSelector(state => state.cart.products)
+	const [openSearch, setOpenSearch] = useState(false)
+	const cartRef = useRef(null);
+	const wishRef = useRef(null)
+	const [wishlistOpen, setWishlistOpen] = useState(false)
+	const [isMenuOpen, setIsMenuOpen] = useState(false)
+	const [screenWidth, setScreenWidth] = useState(window.innerWidth)
 
-  const closeSearch = () =>{
-    setOpenSearch(false)
-  }
+	useEffect(() => {
+		const handleResize = () => {
+			setScreenWidth(window.innerWidth)
+		}
+		window.addEventListener('resize', handleResize)
 
-  const closeWishlist = () => {
-    setWishlistOpen(false);
-  }
+		return (() => {
+			window.removeEventListener('resize', handleResize)
+		})
+	}, [])
 
-  useEffect(() => {
-    const handleOutsideClick = (e) => {
-      if (wishRef.current && !wishRef.current.contains(e.target))
-        closeWishlist()
-    }
-    if (wishlistOpen)
-      document.addEventListener('click', handleOutsideClick)
-    return () => {
-      document.removeEventListener('click', handleOutsideClick)
-    }
-  }, [wishlistOpen])
+	const toggleMenu = () => {
+		setIsMenuOpen(!isMenuOpen);
+	}
 
-  useEffect(() => {
-    const handleOutsideClick = (e) => {
-      if (cartRef.current && !cartRef.current.contains(e.target)) {
-        closeCart();
-      }
-    };
+	const closeCart = () => {
+		setCartOpen(false);
+	};
 
-    if (cartOpen) {
-      document.addEventListener('click', handleOutsideClick);
-    }
+	const closeSearch = () => {
+		setOpenSearch(false)
+	}
 
-    return () => {
-      document.removeEventListener('click', handleOutsideClick);
-    };
-  }, [cartOpen]);
+	const closeWishlist = () => {
+		setWishlistOpen(false);
+	}
 
-  return (
-    <div className={styles.top}>
-      {openSearch ? (
-          <SearchBar closeSearch={closeSearch}/>
-        ) :
-          (
-      <div className={styles.navbar}>
-            <div className={styles.wrapper}>
-              <div className={styles.left}>
-                <div className={styles.item}>
-                  <img src={en} />
-                  <KeyboardArrowDownIcon />
-                </div>
-                <div className={styles.item}>
-                  <span>USD</span>
-                  <KeyboardArrowDownIcon />
-                </div>
-                <div className={styles.item}>
-                  <Link className={styles.linkStyle} to='products/2'>Women</Link>
-                </div>
-                <div className={styles.item}>
-                  <Link className={styles.linkStyle} to='products/4'>Men</Link>
-                </div>
-                <div className={styles.item}>
-                  <Link className={styles.linkStyle} to='products/6'>Kids</Link>
-                </div>
-              </div>
+	useEffect(() => {
+		const handleOutsideClick = (e) => {
+			if (wishRef.current && !wishRef.current.contains(e.target))
+				closeWishlist()
+		}
+		if (wishlistOpen)
+			document.addEventListener('click', handleOutsideClick)
+		return () => {
+			document.removeEventListener('click', handleOutsideClick)
+		}
+	}, [wishlistOpen])
 
-              <div className={styles.center}>
-                <Link className={styles.linkStyle} to=''>Trendify</Link>
+	useEffect(() => {
+		const handleOutsideClick = (e) => {
+			if (cartRef.current && !cartRef.current.contains(e.target)) {
+				closeCart();
+			}
+		};
 
-              </div>
+		if (cartOpen) {
+			document.addEventListener('click', handleOutsideClick);
+		}
 
-              <div className={styles.right}>
+		return () => {
+			document.removeEventListener('click', handleOutsideClick);
+		};
+	}, [cartOpen]);
 
-                <Link className={styles.linkStyle} to=''>About</Link>
-                <Link className={styles.linkStyle} to=''>Contact</Link>
-                <div className={styles.icons}>
-                  <div className={styles.searchBar}>
-                    <SearchIcon onClick={() => setOpenSearch(true)} />
-                  </div>
-                  <PersonOutlinedIcon />
-                  <div className={styles.wish} onClick={() => setWishlistOpen(!wishlistOpen)} ref={wishRef}>
-                    <FavoriteBorderOutlinedIcon />
-                  </div>
-                  <div className={styles.cartIcon} onClick={() => setCartOpen(!cartOpen)} ref={cartRef}>
-                    <ShoppingCartOutlinedIcon />
-                    <span className={styles.itemsCounter}>{products.length}</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          
-        {cartOpen && <Cart />}
-        {wishlistOpen && <Wishlist />}
-      </div>
-      )}
-    </div>
+	return (
+		<div className={styles.top}>
+			{openSearch ? (
+				<SearchBar closeSearch={closeSearch} />
+			) :
+				(
+					<div className={styles.navbar}>
+						<div className={styles.wrapper}>
+							<div className={styles.left}>
+								{screenWidth <= 1024 ?
+									<MenuIcon className={styles.hamburger}/>
+									:
+									<>
+										<div className={styles.item}>
+											<Link className={styles.linkStyle} to='products/2'>Women</Link>
+										</div>
+										<div className={styles.item}>
+											<Link className={styles.linkStyle} to='products/4'>Men</Link>
+										</div>
+										<div className={styles.item}>
+											<Link className={styles.linkStyle} to='products/6'>Kids</Link>
+										</div>
+									</>
+								}
 
-  )
+							</div>
+
+							<div className={styles.center}>
+								<Link className={styles.linkStyle} to=''>Trendify</Link>
+
+							</div>
+
+							<div className={styles.right}>
+								{/*<Link className={styles.linkStyle} to=''>About</Link>
+										<Link className={styles.linkStyle} to=''>Contact</Link>*/}
+								<div className={styles.icons}>
+									<div className={styles.searchBar}>
+										<SearchIcon onClick={() => setOpenSearch(true)} />
+									</div>
+									{screenWidth <= 1024 ?
+										''
+										:
+										<>
+											<PersonOutlinedIcon />
+											<div className={styles.wish} onClick={() => setWishlistOpen(!wishlistOpen)} ref={wishRef}>
+												<FavoriteBorderOutlinedIcon />
+											</div>
+										</>
+
+									}
+
+									<div className={styles.cartIcon} onClick={() => setCartOpen(!cartOpen)} ref={cartRef}>
+										<ShoppingCartOutlinedIcon />
+										<span className={styles.itemsCounter}>{products.length}</span>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						{cartOpen && <Cart />}
+						{wishlistOpen && <Wishlist />}
+					</div>
+				)}
+		</div>
+
+	)
 
 }
