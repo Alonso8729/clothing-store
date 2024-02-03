@@ -5,7 +5,6 @@ import c2 from '../../assets/Categories/c2.jpg'
 import c3 from '../../assets/Categories/c3.jpg'
 import c4 from '../../assets/Categories/c4.jpg'
 import c5 from '../../assets/Categories/c5.jpg'
-import c6 from '../../assets/Categories/c6.jpg'
 import { Link } from 'react-router-dom'
 
 const Categories = () => {
