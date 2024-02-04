@@ -72,6 +72,10 @@
     .center {
         font-size: 2rem;
     }
+
+    .left {
+        padding-right: 15px;
+    }
 }
 
 @media only screen and (max-width:576px) {

@@ -82,3 +82,9 @@
     font-size: 12px;
     cursor: pointer;
   }
+
+  @media only screen and (max-width:768px) {
+    .cart {
+        top: 70px;
+    }
+  }
