@@ -3,7 +3,7 @@
     justify-content: space-between;
     align-items: center;
     background-color: #fff;
-    padding: 15px 25px;
+    padding: 15px;
 }
 
 .navbar,
@@ -49,8 +49,8 @@
     border-radius: 50%;
     padding: 0 4px;
     position: absolute;
-    top: 20px;
-    right: 23px;
+    top: 23px;
+    right: 11px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -64,7 +64,7 @@
     cursor: pointer;
 }
 
-@media only screen and (max-width:768px) {
+w {
     .icons {
         gap: 10px;
     }
