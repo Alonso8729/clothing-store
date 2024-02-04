@@ -29,9 +29,9 @@ const Slider = () => {
     return (
         <div className={styles.slider} >
             <div className={styles.container} style={{ transform: `translateX(-${currSlide * 100}vw)` }}>
-                <img className={styles.img} src={imgArray[0]} />
-                <img className={styles.img} src={imgArray[1]} />
-                <img className={styles.img} src={imgArray[2]} />
+                <img className={`${styles.img} ${styles.men}`} src={imgArray[0]} />
+                <img className={`${styles.img} ${styles.woman}`} src={imgArray[1]} />
+                <img className={`${styles.img} ${styles.kids}`} src={imgArray[2]} />
             </div>
             <div className={styles.icons}>
                 <div className={styles.icon} onClick={prevSlide}>
