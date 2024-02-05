@@ -60,3 +60,10 @@
      background-color: #2879fe;
     
 }
+
+@media only screen and (max-width:500px){
+    .button {
+        min-width: 75px;
+        font-size: 10px;
+    }
+}

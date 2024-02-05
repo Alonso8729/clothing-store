@@ -64,7 +64,7 @@
     cursor: pointer;
 }
 
-w {
+@media only screen and (max-width:770px) {
     .icons {
         gap: 10px;
     }
@@ -74,7 +74,7 @@ w {
     }
 
     .left {
-        padding-right: 15px;
+        padding-right: 25px;
     }
 }
 
