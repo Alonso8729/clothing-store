@@ -78,11 +78,11 @@ export const Product = () => {
         </div>
         <hr />
         <div className={styles.details}>
-          <div className={styles.detailsItem}>
+          <div className={styles.detailsItem} onClick={() => setDescriptionExpanded(!descriptionExpanded)}>
             <span>Description</span>
             {descriptionExpanded ?
               (<RemoveIcon onClick={() => setDescriptionExpanded(!descriptionExpanded)} />)
-              : <AddIcon onClick={() => setDescriptionExpanded(!descriptionExpanded)} />
+              : <AddIcon  />
             }
 
           </div>
@@ -90,12 +90,12 @@ export const Product = () => {
             <p>{item.desc}</p>
           }
           <hr />
-          <div className={styles.detailsItem}>
+          <div className={styles.detailsItem} onClick={() => setAdditionalInfoExpanded(!additionalInfoExpanded)}>
             <span>Additional Information</span>
             {additionalInfoExpanded ?
               <RemoveIcon onClick={() => setAdditionalInfoExpanded(!additionalInfoExpanded)} />
               :
-              <AddIcon onClick={() => setAdditionalInfoExpanded(!additionalInfoExpanded)} />
+              <AddIcon  />
             }
           </div>
           {additionalInfoExpanded &&
@@ -103,12 +103,12 @@ export const Product = () => {
               hand wash cold</p>}
 
           <hr />
-          <div className={styles.detailsItem}>
+          <div className={styles.detailsItem} onClick={() => setReturnsExpanded(!returnsExpanded)}>
             <span>Returns & Exchange</span>
             {returnsExpanded ?
               <RemoveIcon onClick={() => setReturnsExpanded(!returnsExpanded)} />
               :
-              <AddIcon onClick={() => setReturnsExpanded(!returnsExpanded)} />
+              <AddIcon  />
             }
           </div>
           {returnsExpanded &&
