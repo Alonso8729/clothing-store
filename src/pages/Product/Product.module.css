@@ -144,7 +144,10 @@ hr {
 .detailsItem {
     display: flex;
     justify-content: space-between;    
+    cursor: pointer;
 }
+
+
 
 @media only screen and (max-width:767px) {
     .product {
