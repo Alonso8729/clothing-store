@@ -2,7 +2,7 @@
     width: 250px;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 5px;
     margin-bottom: 50px;
 }
 
@@ -58,7 +58,7 @@
     font-weight: 400;
 }
 
-.prices{
+.prices {
     display: flex;
     gap: 20px;
 }
@@ -72,3 +72,6 @@
     text-decoration: line-through;
     color: grey;
 }
+
+
+  
