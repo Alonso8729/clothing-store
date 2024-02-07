@@ -59,6 +59,6 @@
 
 @media only screen and (max-width:450px) {
     .img {
-        max-width: 300px;
+        max-width: 250px;
     }
 }

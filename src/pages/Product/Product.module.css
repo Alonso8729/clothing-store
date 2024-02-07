@@ -44,7 +44,7 @@
     background-color: #fff;
     color: rgb(25, 117, 230);
     display: flex;
-    width: 300px;
+    max-width: 300px;
     align-items: center;
     outline: none;
     border: 1px solid rgb(25, 117, 230);
