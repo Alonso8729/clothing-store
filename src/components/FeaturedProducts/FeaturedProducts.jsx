@@ -1,16 +1,5 @@
-import React, { useEffect, useState } from 'react'
 import styles from './FeaturedProducts.module.css'
 import Card from '../Card/Card'
-import imgOneFront from '../../assets/Cards/img1-front.jpg'
-import imgOneBack from '../../assets/Cards/img1-back.jpg'
-import imgTwoFront from '../../assets/Cards/img2-front.jpg'
-import imgTwoBack from '../../assets/Cards/img2-back.jpg'
-import imgThreeFront from '../../assets/Cards/img3-front.jpg'
-import imgThreeBack from '../../assets/Cards/img3-back.jpg'
-import imgFourFront from '../../assets/Cards/img4-front.jpg'
-import imgFourBack from '../../assets/Cards/img4-back.jpg'
-import imgFiveFront from '../../assets/Cards/img5-front.jpg'
-import imgFiveBack from '../../assets/Cards/img5-back.jpg'
 import data from '../../Data'
 
 const FeaturedProducts = ({ type }) => {

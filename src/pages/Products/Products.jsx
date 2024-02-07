@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import styles from './Products.module.css'
-import bg from '../../assets/Products/bg.jpg'
 import List from '../../components/List/List'
 import { useParams } from 'react-router-dom'
 import TuneIcon from '@mui/icons-material/Tune';
@@ -22,13 +21,6 @@ export const Products = () => {
     );
   }
 
-  const bgImages = ['https://images.pexels.com/photos/5705102/pexels-photo-5705102.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-    'https://images.pexels.com/photos/1536619/pexels-photo-1536619.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-    'https://images.pexels.com/photos/1049317/pexels-photo-1049317.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-    bg,
-    'https://images.pexels.com/photos/264591/pexels-photo-264591.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-    'https://images.pexels.com/photos/2787279/pexels-photo-2787279.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
-  ];
 
   const category = () => {
     switch (catId) {
@@ -52,13 +44,8 @@ export const Products = () => {
   return (
     <div className={styles.products}>
       <h1 className={styles.catHeader}>{category() && category()}</h1>
-      <div className={styles.items}>
-        <div className={styles.controls}>
-          <div className={styles.filterDiv} onClick={() => setFilterMenu(!filterMenu)}>
-            <TuneIcon />
-            <span>Filter</span>
-          </div>
-          {filterMenu &&
+      <div className={styles.container}>
+        {/* {filterMenu &&
             <div className={styles.filterMenu}>
               <div className={styles.filterItem}>
                 <h2 className={styles.h2}>Product Categories</h2>
@@ -90,20 +77,24 @@ export const Products = () => {
               <div className={styles.filterItem}>
                 <h2 className={styles.h2}>Sort by</h2>
                 <div className={styles.inputItem}>
-                  <input type="radio" id='desc' value='desc' name='price' onChange={(e) => setSort('asc')} />
+                  <input type="radio" id='desc' value='desc' name='price' onChange={() => setSort('asc')} />
                   <label htmlFor="desc">Price (Lowest first)</label>
                 </div>
                 <div className={styles.inputItem}>
-                  <input type="radio" id='desc' value='desc' name='price' onChange={(e) => setSort('desc')} />
+                  <input type="radio" id='desc' value='desc' name='price' onChange={() => setSort('desc')} />
                   <label htmlFor="desc">Price (Highest first)</label>
                 </div>
               </div>
             </div>
-          }
+          }*/}
+        <div className={styles.items}>
+          <div className={styles.filterDiv} onClick={() => setFilterMenu(!filterMenu)}>
+            <TuneIcon />
+            <span>Filter</span>
+          </div>
+          <List searchInput={searchResult} catId={catId} maxPrice={maxPrice} sort={sort} subCats={subCats} />
         </div>
-        {/*<img className={styles.catImg} src={bgImages[catId - 1]} /> */}
-        <List searchInput={searchResult} catId={catId} maxPrice={maxPrice} sort={sort} subCats={subCats} />
       </div>
-    </div >
+    </div>
   )
 }

@@ -12,11 +12,11 @@
     font-size: 1.5rem;
 }
 
-.controls {
+.container {
     display: flex;
-    width: 100%;
-    flex-direction: column;
 }
+
+
 
 .filterDiv {
     display: flex;
@@ -61,4 +61,9 @@ label {
 
 .filterItem .inputItem {
     display: flex;
+}
+
+.items {
+    display: flex;
+    flex-direction: column;
 }

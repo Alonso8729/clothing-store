@@ -10,19 +10,15 @@
     align-items: center;
 }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 79da70f (edit flex)
-.h1 {
+<<<<<<< HEAD <<<<<<< HEAD=======>>>>>>>79da70f (edit flex) .h1 {
     flex: 3;
 }
 
-.p {
->>>>>>> da1021608b5b5fba0f13e0f6c01ae2b235bc8b28
+>>>>>>>da1021608b5b5fba0f13e0f6c01ae2b235bc8b28 p {
     color: grey;
     min-width: 250px;
     flex: 4;
+
 }
 
 .bottom {
