@@ -7,13 +7,17 @@ import { useLocation } from 'react-router-dom';
 import { useDispatch } from 'react-redux'
 import { addToCart } from '../../redux/cartReducer';
 import { addToWishlist } from '../../redux/wishlistReducer';
-
+import AddIcon from '@mui/icons-material/Add';
+import RemoveIcon from '@mui/icons-material/Remove';
 export const Product = () => {
   const location = useLocation();
   const { item } = location.state || {};
   const [quantity, setQuantity] = useState(1);
   const [selectedImg, setSelectedImg] = useState(0)
   const images = [item.imgFront, item.imgBack];
+  const [descriptionExpanded, setDescriptionExpanded] = useState(false);
+  const [additionalInfoExpanded, setAdditionalInfoExpanded] = useState(false);
+  const [returnsExpanded, setReturnsExpanded] = useState(false);
   const dispatch = useDispatch();
 
   const handleAddToWishlist = () => {
@@ -43,7 +47,6 @@ export const Product = () => {
           {item.title}
         </h1>
         <span className={styles.price}>${item.newPrice}</span>
-        <p className={styles.p}>{item.desc}</p>
         <div className={styles.quantity}>
           <button className={styles.btn} onClick={() => setQuantity(prev => prev === 1 ? 1 : prev - 1)}>-</button>
           <span >{quantity}</span>
@@ -75,11 +78,42 @@ export const Product = () => {
         </div>
         <hr />
         <div className={styles.details}>
-          <span>DESCRIPTION</span>
+          <div className={styles.detailsItem} onClick={() => setDescriptionExpanded(!descriptionExpanded)}>
+            <span>Description</span>
+            {descriptionExpanded ?
+              (<RemoveIcon onClick={() => setDescriptionExpanded(!descriptionExpanded)} />)
+              : <AddIcon  />
+            }
+
+          </div>
+          {descriptionExpanded &&
+            <p>{item.desc}</p>
+          }
           <hr />
-          <span>ADDITIONAL INFORMATION</span>
+          <div className={styles.detailsItem} onClick={() => setAdditionalInfoExpanded(!additionalInfoExpanded)}>
+            <span>Additional Information</span>
+            {additionalInfoExpanded ?
+              <RemoveIcon onClick={() => setAdditionalInfoExpanded(!additionalInfoExpanded)} />
+              :
+              <AddIcon  />
+            }
+          </div>
+          {additionalInfoExpanded &&
+            <p>100% cotton
+              hand wash cold</p>}
+
           <hr />
-          <span>FAQ</span>
+          <div className={styles.detailsItem} onClick={() => setReturnsExpanded(!returnsExpanded)}>
+            <span>Returns & Exchange</span>
+            {returnsExpanded ?
+              <RemoveIcon onClick={() => setReturnsExpanded(!returnsExpanded)} />
+              :
+              <AddIcon  />
+            }
+          </div>
+          {returnsExpanded &&
+            <p>If you are not absolutely satisfied with your new nununu,
+              you are more than welcome to return it in up to 14 days after receiving your package. </p>}
         </div>
       </div>
     </div>

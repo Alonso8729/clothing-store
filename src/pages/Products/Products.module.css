@@ -1,17 +1,38 @@
 .products {
     display: flex;
-    padding: 30px 50px;
+    padding: 20px;
+    flex-direction: column;
+    align-items: center;
 }
 
-.left {
-    flex: 1;
-    position: sticky;
-    height: 100%;
-    top: 50px;
+.catHeader {
+    text-align: center;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    font-size: 1.5rem;
 }
 
-.right {
-    flex: 3;
+.controls {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+}
+
+.filterDiv {
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+    padding-left: 20px;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.filterDiv>span {
+    font-weight: bold;
+}
+
+.filterMenu {
+    padding: 20px;
 }
 
 .catImg {

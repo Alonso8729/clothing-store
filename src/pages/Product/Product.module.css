@@ -37,22 +37,32 @@
     width: 100%;
     max-height: 800px;
     object-fit: cover;
+    object-position: center top;
 }
 
 .add {
-    background-color: rgb(25, 117, 230);
-    color: white;
+    background-color: #fff;
+    color: rgb(25, 117, 230);
     display: flex;
-    width: 250px;
+    width: 300px;
     align-items: center;
     outline: none;
-    border: none;
+    border: 1px solid rgb(25, 117, 230);
     font-family: inherit;
     padding: 10px;
     text-align: center;
+    font-weight: 600;
     justify-content: center;
     gap: 10px;
     cursor: pointer;
+    letter-spacing: 0.5px;
+
+}
+
+.add:hover {
+    background-color: rgb(25, 117, 230);
+    border: 1px solid transparent;
+    color: white;
 }
 
 .btn {
@@ -62,13 +72,18 @@
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    border: none;
+    border: 1px solid transparent;
+}
+
+.btn:hover {
+    border: 1px solid black;
 }
 
 .link {
     display: flex;
     gap: 10px;
 }
+
 .item {
     display: flex;
     color: rgb(25, 117, 230);
@@ -84,7 +99,7 @@
     font-weight: 500;
 }
 
-.p{
+.p {
     font-size: 18px;
     font-weight: 300;
     text-align: justify;
@@ -100,7 +115,7 @@
 }
 
 hr {
-    border: 1px solid lightgray;
+    border: 1px thin lightgray;
 }
 
 .details {
@@ -111,12 +126,39 @@ hr {
     margin-top: 30px;
 }
 
-.details > hr {
-    width: 200px;
+.details>hr {
+    max-width: 1500px;
 }
 
 .quantity {
     display: flex;
     align-items: center;
     gap: 10px;
+}
+
+.detailsItem > span {
+    font-weight: bold;
+    color: black;
+}
+
+.detailsItem {
+    display: flex;
+    justify-content: space-between;    
+    cursor: pointer;
+}
+
+
+
+@media only screen and (max-width:767px) {
+    .product {
+        flex-direction: column;
+    }
+    .left {
+        flex-direction: column-reverse;
+    }
+
+    .images {
+        display: flex;
+        gap: 10px;
+    }
 }

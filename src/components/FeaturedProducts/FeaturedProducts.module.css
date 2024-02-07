@@ -4,25 +4,36 @@
 
 .top {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
     margin-bottom: 50px;
-    flex-wrap: wrap;
     gap: 10px;
+    flex-direction: column;
+    align-items: center;
 }
 
+<<<<<<< HEAD
 .h1 {
     flex: 3;
 }
 
 .p {
     flex: 4;
+}
+
+.p {
+>>>>>>> da1021608b5b5fba0f13e0f6c01ae2b235bc8b28
     color: grey;
+    min-width: 250px;
 }
 
 .bottom {
     display: flex;
-    justify-content: center;
-    gap: 50px;
+    justify-content: space-between;
     flex-wrap: wrap;
+    gap: 50px;
+}
+
+@media only screen and (max-width:1024px) {
+    .bottom {
+        justify-content: center;
+    }
 }
