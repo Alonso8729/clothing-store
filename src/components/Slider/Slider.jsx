@@ -1,7 +1,4 @@
 import styles from './Slider.module.css'
-import img3 from '../../assets/img/kids.jpg'
-import img1 from '../../assets/img/pexels-cottonbro-studio-7653718.jpg'
-import img2 from '../../assets/img/women.jpg'
 import WestIcon from '@mui/icons-material/West';
 import EastIcon from '@mui/icons-material/East';
 import React, { useState, useEffect } from 'react'
