@@ -17,11 +17,13 @@ const FeaturedProducts = ({ type }) => {
                 <h1 className={styles.h1}>{type} Products</h1>
                 <p className={styles.p}>Explore Trendify's featured clothing collection, where contemporary trends meet timeless elegance.</p>
             </div>
-            <div className={styles.bottom}>
-                {selectedProducts?.map(item => (
-                    <Card item={item} key={item.id} />
-                ))}
 
+            <div className={styles.wrapper}>
+                <div className={styles.bottom}>
+                    {selectedProducts?.map(item => (
+                        <Card item={item} key={item.id} />
+                    ))}
+                </div>
             </div>
         </div>
     )

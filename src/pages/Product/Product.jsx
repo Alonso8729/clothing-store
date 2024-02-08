@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState,useEffect } from 'react'
 import styles from './Product.module.css'
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
@@ -19,6 +19,11 @@ export const Product = () => {
   const [additionalInfoExpanded, setAdditionalInfoExpanded] = useState(false);
   const [returnsExpanded, setReturnsExpanded] = useState(false);
   const dispatch = useDispatch();
+  const {pathname} = useLocation()
+
+  useEffect(()=>{
+    window.scrollTo(0,0)
+  },[pathname])
 
   const handleAddToWishlist = () => {
     dispatch(addToWishlist({

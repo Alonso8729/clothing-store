@@ -1,23 +1,26 @@
 .card {
-    width: 250px;
     display: flex;
     flex-direction: column;
     gap: 5px;
     margin-bottom: 50px;
+    aspect-ratio: 9/16;
+    width: auto;
+    height: 400px;
+  
 }
 
 .image {
-    width: 100%;
-    height: 400px;
+    max-width: 100%;
+    height: 100%;
     overflow: hidden;
     position: relative;
+    object-position: top;
 }
 
 
 .link {
     text-decoration: none;
     color: inherit;
-
 }
 
 .mainImage,
@@ -26,6 +29,7 @@
     height: 100%;
     object-fit: cover;
     position: absolute;
+    object-position: top;
 }
 
 .mainImage {
@@ -44,7 +48,7 @@
 .span {
     position: absolute;
     top: 5px;
-    left: 5px;
+    right: 1px;
     background-color: white;
     color: teal;
     padding: 3px;
@@ -74,4 +78,30 @@
 }
 
 
-  
+
+.addBtn {
+    display: none;
+    position: absolute;
+    color: black;
+    background-color: #fff;
+    border: 1px solid grey;
+    z-index: 5;
+    left: 0;
+    right: 0;
+    width: 100%;
+    bottom: 10%;
+    font-size: 16px;
+    padding: 8px 10px;
+    cursor: pointer ;
+}
+
+.card:hover .addBtn {
+    display: block;
+}
+
+@media only screen and (max-width:572px) {
+    .card {
+        height: 270px;
+    }   
+
+}

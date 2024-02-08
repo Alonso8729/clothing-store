@@ -22,15 +22,7 @@ export const Footer = () => {
         </div>
         <div className={styles.item}>
           <h3>About</h3>
-          <span className={styles.span}>Explore Trendify, your go-to fashion hub for curated styles that transcend trends. We believe in empowering self-expression through carefully selected apparel,
-            inspiring confidence for the modern individual. Welcome to Trendify, where fashion meets empowerment.</span>
-        </div>
-        <div className={styles.item}>
-          <h3>Contact</h3>
-          <span className={styles.span}>Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-            Reiciendis asperiores distinctio nam pariatur?
-            Vitae ab facere tempore repudiandae adipisci odit necessitatibus facilis modi est!
-            Itaque quasi provident officiis esse repellat?</span>
+          <span className={styles.span}> Welcome to Trendify, where fashion meets empowerment.</span>
         </div>
       </div>
       <div className={styles.bottom}>

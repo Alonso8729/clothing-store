@@ -3,7 +3,7 @@ const data = [
     {
         id: 1,
         catId: [2,3],
-        title: 'Cropped Hood Sweatshirt',
+        title: 'Cropped Sweatshirt',
         imgFront: 'https://static.zara.net/photos///2024/V/0/1/p/3199/629/803/12/w/750/3199629803_1_1_1.jpg?ts=1702382096749',
         imgBack: 'https://static.zara.net/photos///2024/V/0/1/p/3199/629/803/12/w/750/3199629803_2_3_1.jpg?ts=1701964304634',
         oldPrice: 28,
