@@ -74,4 +74,22 @@
 }
 
 
-  
+
+.addBtn {
+    display: none;
+    position: absolute;
+    color: black;
+    background-color: #fff;
+    border: 1px solid grey;
+    z-index: 5;
+    left: 0;
+    right: 0;
+    width: 100%;
+    bottom: 10%;
+    font-size: 16px;
+    padding: 8px 10px;
+}
+
+.card:hover .addBtn {
+    display: block;
+}

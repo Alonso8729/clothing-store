@@ -1,8 +1,12 @@
 import styles from './Card.module.css'
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { useDispatch } from 'react-redux'
+import { addToCart } from '../../redux/cartReducer';
 
 const Card = ({ item }) => {
+  const dispatch = useDispatch()
+
   return (
     <Link className={styles.link} to={`/clothing-store/product/${item.id}`} state={{ item }}>
       <div className={styles.card}>
@@ -10,6 +14,15 @@ const Card = ({ item }) => {
           {item?.isNew && <span className={styles.span}>New Item</span>}
           <img src={item.imgFront} className={styles.mainImage} />
           <img src={item.imgBack} className={styles.secondImage} />
+          <button className={styles.addBtn} onClick={() => dispatch(addToCart({
+            id: item.id,
+            title: item.title,
+            desc: item.desc,
+            img: item.imgFront,
+            price: item.newPrice,
+            quantity: 1
+          }))}>Add To Cart</button>
+
         </div>
         <h2 className={styles.h2}>{item?.title}</h2>
         <div className={styles.prices}>
