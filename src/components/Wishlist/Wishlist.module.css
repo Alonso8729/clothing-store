@@ -1,6 +1,6 @@
 .wishlist {
     position: absolute;
-    top: 80px;
+    top: 64px;
     right: 0;
     z-index: 3;
     background-color: #fff;
@@ -49,6 +49,6 @@
 
 @media only screen and (max-width:768px) {
     .wishlist {
-        top: 70px;
+        top: 60px;
     }
 }
