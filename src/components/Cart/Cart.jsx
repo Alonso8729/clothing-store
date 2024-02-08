@@ -18,8 +18,9 @@ const Cart = () => {
 
     return (
         <div className={styles.cart}>
+
             <h1 className={styles.h1}>
-                {products.length === 0 ? 'The cart is empty':''} 
+                {products.length === 0 ? 'The cart is empty' : ''}
             </h1>
             {products?.map(item => (
                 <div key={item.id} className={styles.item}>
@@ -36,14 +37,14 @@ const Cart = () => {
 
             ))}
             <div className={styles.total}>
-                <span>SUBTOTAL</span>
+                <span className={styles.totalSpan}>Total</span>
                 <span>${totalPrice()}</span>
             </div>
-            <button className={styles.btn}>PROCEED TO CHECKOUT</button>
-            <span className={styles.reset} onClick={() => dispatch(resetCart())}>Reset Cart</span>
+            <div className={styles.buttons}>
+                <button className={styles.btn}>PROCEED TO CHECKOUT</button>
+                <span className={styles.reset} onClick={() => dispatch(resetCart())}>Reset Cart</span>
+            </div>
         </div>
-
     )
 }
-
 export default Cart
