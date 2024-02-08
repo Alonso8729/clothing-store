@@ -1,5 +1,5 @@
 .featuredProducts {
-    margin: 100px 200px;
+    padding: 50px 30px;
 }
 
 .top {
@@ -10,26 +10,29 @@
     align-items: center;
 }
 
-<<<<<<< HEAD <<<<<<< HEAD=======>>>>>>>79da70f (edit flex) .h1 {
-    flex: 3;
-}
-
->>>>>>>da1021608b5b5fba0f13e0f6c01ae2b235bc8b28 p {
+p {
     color: grey;
     min-width: 250px;
-    flex: 4;
+}
 
+.wrapper {
+    display: flex;
+    justify-content: center;
 }
 
 .bottom {
     display: flex;
-    justify-content: space-between;
     flex-wrap: wrap;
-    gap: 50px;
+    gap: 20px;
 }
 
-@media only screen and (max-width:1024px) {
+@media only screen and (max-width:572px) {
+    .featuredProducts {
+        padding: 15px;
+    }
+
     .bottom {
         justify-content: center;
     }
+
 }
