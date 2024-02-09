@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react'
 import styles from './Product.module.css'
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
-import BalanceIcon from '@mui/icons-material/Balance';
 import { useLocation } from 'react-router-dom';
 import { useDispatch } from 'react-redux'
 import { addToCart } from '../../redux/cartReducer';
@@ -113,9 +112,6 @@ export const Product = () => {
           <div className={styles.link}>
             <div className={styles.item} onClick={handleAddToWishlist} >
               <FavoriteBorderIcon /> ADD TO WISHLIST
-            </div>
-            <div className={styles.item}>
-              <BalanceIcon /> ADD TO COMPARE
             </div>
           </div>
           <div className={styles.info}>
