@@ -2,6 +2,7 @@
     padding: 20px 50px;
     display: flex;
     gap: 50px;
+    flex-direction: column;
 }
 
 .left {
@@ -42,12 +43,12 @@
 
 .add {
     background-color: #fff;
-    color: rgb(25, 117, 230);
+    color: gray;
     display: flex;
     max-width: 300px;
     align-items: center;
     outline: none;
-    border: 1px solid rgb(25, 117, 230);
+    border: 1px solid grey;
     font-family: inherit;
     padding: 10px;
     text-align: center;
@@ -72,30 +73,54 @@
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    border: 1px solid transparent;
+    border: 1px solid gray;
+    color: gray;
+    background-color: #fff;
 }
 
 .btn:hover {
-    border: 1px solid black;
+    border: 1px solid  rgb(25, 117, 230);
+    color:  rgb(25, 117, 230);
 }
+
+.selectedBtn {
+    color: #fff !important; 
+    background-color:  rgb(25, 117, 230);
+    border: 1px solid grey;
+}
+
+
 
 .link {
     display: flex;
     gap: 10px;
 }
 
+.size {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.sizeBtns {
+    display: flex;
+    gap: 10px;
+}
+
 .item {
     display: flex;
-    color: rgb(25, 117, 230);
+    color: grey;
     cursor: pointer;
     gap: 5px;
     font-size: 14px;
+}
 
+.item:hover {
+    color:  rgb(25, 117, 230);
 }
 
 .price {
     font-size: 30px;
-    color: rgb(25, 117, 230);
     font-weight: 500;
 }
 
@@ -132,19 +157,52 @@ hr {
 
 .quantity {
     display: flex;
-    align-items: center;
+    gap: 15px;
+    flex-direction: column;
+}
+
+.quantityButtons {
+    display: flex;
     gap: 10px;
+}
+
+.quantityButtons >span {
+    align-self: center;
 }
 
 .detailsItem > span {
     font-weight: bold;
     color: black;
+    align-self: center;
 }
 
 .detailsItem {
     display: flex;
     justify-content: space-between;    
     cursor: pointer;
+}
+
+.top {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.bottom{
+    display: flex;
+    flex-direction: column;
+}
+
+.bottom > h3 {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
 }
 
 
@@ -157,8 +215,16 @@ hr {
         flex-direction: column-reverse;
     }
 
+    .top {
+        flex-direction: column;
+    }
+
     .images {
         display: flex;
         gap: 10px;
+    }
+
+    .product {
+        padding: 20px 15px;
     }
 }

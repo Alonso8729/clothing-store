@@ -17,13 +17,17 @@
     align-items: center;
 }
 
+.h1 {
+    margin-left: 20px;
+}
+
 .left {
     gap: 15px;
     font-weight: 600;
 }
 
 .icons {
-    gap: 15px;
+    gap: 10px;
     cursor: pointer;
 }
 
@@ -66,16 +70,13 @@
 }
 
 @media only screen and (max-width:770px) {
-    .icons {
-        gap: 10px;
-    }
-
+   
     .center {
         font-size: 2rem;
     }
 
     .left {
-        padding-right: 25px;
+        padding-right: 68px;
     }
 
     .itemsCounter {
@@ -92,15 +93,15 @@
 
 @media only screen and (min-width:771px) {
     .left {
-        margin-left: 30px;
+        margin-left: 20px;
     }
 
     .right {
-        margin-right: 30px;
+        margin-right: 20px;
     }
 
     .itemsCounter {
-        right: 37px;
-        top: 18px;
+        right: 27px;
+        top: 15px;
     }
 }
