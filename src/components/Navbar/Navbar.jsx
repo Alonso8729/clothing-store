@@ -110,8 +110,6 @@ export const Navbar = () => {
 						</div>
 
 						<div className={styles.right}>
-							{/*<Link className={styles.linkStyle} to=''>About</Link>
-										<Link className={styles.linkStyle} to=''>Contact</Link>*/}
 							<div className={styles.icons}>
 								<div className={styles.searchBar}>
 									<SearchIcon onClick={() => setOpenSearch(true)} />
@@ -121,13 +119,12 @@ export const Navbar = () => {
 									:
 									<>
 										<PersonOutlinedIcon />
-										<div className={styles.wish} onClick={() => setWishlistOpen(!wishlistOpen)} ref={wishRef}>
-											<FavoriteBorderOutlinedIcon />
-										</div>
 									</>
 
 								}
-
+								<div className={styles.cartIcon} onClick={() => setWishlistOpen(!wishlistOpen)} ref={wishRef}>
+									<FavoriteBorderOutlinedIcon />
+								</div>
 								<div className={styles.cartIcon} onClick={() => setCartOpen(!cartOpen)} ref={cartRef}>
 									<ShoppingCartOutlinedIcon />
 									<span className={styles.itemsCounter}>{products.length}</span>
