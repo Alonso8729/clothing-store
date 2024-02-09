@@ -49,8 +49,8 @@ export const Products = () => {
     <div className={styles.products}>
       <h1 className={styles.catHeader}>{category() && category()}</h1>
       <div className={styles.container}>
-        <div className={styles.filterDiv} onClick={() => setFilterMenu(!filterMenu)}>
-          <div className={styles.filterIcon}>
+        <div className={styles.filterDiv} >
+          <div className={styles.filterIcon} onClick={() => setFilterMenu(!filterMenu)}>
             <TuneIcon />
             <span>Filter</span>
           </div>
