@@ -60,7 +60,7 @@ const data = [
     },
     {
         id: 5,
-        catId: [3],
+        catId: [3,2],
         title: 'Fitted soft coat',
         imgFront: 'https://static.zara.net/photos///2024/V/0/1/p/8073/253/704/18/w/750/8073253704_1_1_1.jpg?ts=1702382195475',
         imgBack: 'https://static.zara.net/photos///2024/V/0/1/p/8073/253/704/18/w/750/8073253704_2_6_1.jpg?ts=1702382195971',
@@ -75,7 +75,7 @@ const data = [
     },
     {
         id: 6,
-        catId: [1, 3],
+        catId: [1, 3,2],
         title: 'Soft hooded coat',
         imgFront: 'https://static.zara.net/photos///2024/V/0/1/p/3046/266/802/18/w/750/3046266802_1_1_1.jpg?ts=1702468356661',
         imgBack: 'https://static.zara.net/photos///2024/V/0/1/p/3046/266/802/18/w/750/3046266802_2_5_1.jpg?ts=1702468356735',
@@ -191,7 +191,6 @@ const data = [
         productType: 'Shirt',
         tags: ['Men', 'Top', 'Shirts'],
         subCat: 'shirt'
-
     },
     {
         id: 14,
