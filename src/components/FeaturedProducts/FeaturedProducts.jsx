@@ -5,8 +5,8 @@ import data from '../../Data'
 const FeaturedProducts = ({ type }) => {
 
     //Write const data with couple of featured products
-    const featuredProducts = data.filter(item => item.id >= 1 && item.id <= 4);
-    const trendingProducts = data.filter(item => item.id >= 5 && item.id <= 8);
+    const featuredProducts = data.filter(item => item.id >= 1 && item.id <= 6);
+    const trendingProducts = data.filter(item => item.id >= 7 && item.id <= 12);
 
     const selectedProducts = type === 'Featured' ? featuredProducts : trendingProducts
 
