@@ -16,6 +16,9 @@ Welcome to the Clothing Store project! This project is a web application for an 
 - CSS Modules: CSS styling approach for component-based styling.
 - Vite: Build tool for modern web development.
 
+![image](https://github.com/Alonso8729/clothing-store/assets/119747342/8b53cddc-daeb-4815-9f3e-a5bb5057d40c)
+![image](https://github.com/Alonso8729/clothing-store/assets/119747342/4e6424bd-c693-4bdc-8ed7-e22409d134ac)
+
 ## Getting Started
 To get started with this project, follow these steps:
 
@@ -37,5 +40,3 @@ npm install
 # Start the development server
 npm start
 
-![image](https://github.com/Alonso8729/clothing-store/assets/119747342/8b53cddc-daeb-4815-9f3e-a5bb5057d40c)
-![image](https://github.com/Alonso8729/clothing-store/assets/119747342/4e6424bd-c693-4bdc-8ed7-e22409d134ac)
