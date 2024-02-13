@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useMemo } from 'react'
 import styles from './Product.module.css'
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
@@ -43,7 +43,7 @@ export const Product = () => {
     }));
   };
 
-  const additionalItems = () => {
+  const additionalItems = useMemo(() => {
     // Choose all items except current item
     const allItems = data.filter(product => product.id !== item.id)
     let itemsYouMayLike = [];
@@ -63,7 +63,7 @@ export const Product = () => {
       }
     }
     return itemsYouMayLike
-  }
+  }, [])
 
   return (
     <div className={styles.product}>
@@ -163,7 +163,7 @@ export const Product = () => {
       <div className={styles.bottom}>
         <h3>WE KNOW YOU'LL LIKE THIS</h3>
         <div className={styles.list}>
-          {additionalItems().map(item => (
+          {additionalItems.map(item => (
             <Card item={item} key={item.id} />
           ))}
         </div>
