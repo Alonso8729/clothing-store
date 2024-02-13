@@ -13,15 +13,15 @@ const Contact = () => {
             <div className={styles.wrapper}>
                 <span>BE IN TOUCH WITH US: </span>
                 <div className={styles.mail}>
-                    <input className={styles.input} type="text" placeholder='Enter youe email' />
+                    <input className={styles.input} type="text" placeholder='Enter your email' />
                     <button className={styles.btn}>JOIN US</button>
                 </div>
                 <div className={styles.icons}>
-                    <FacebookIcon/>
-                    <InstagramIcon/>
-                    <TwitterIcon/>
-                    <GoogleIcon/>
-                    <PinterestIcon/>
+                    <FacebookIcon />
+                    <InstagramIcon />
+                    <TwitterIcon />
+                    <GoogleIcon />
+                    <PinterestIcon />
                 </div>
             </div>
         </div>
